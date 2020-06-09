@@ -1,3 +1,7 @@
+const config = require("./config")
+const slashes = require("remove-trailing-slash")
+const wpUrl = slashes(config.wordPressUrl)
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -6,6 +10,16 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-theme-ui",
+    "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-source-wordpress-experimental`,
+      options: {
+        url: `${wpUrl}/graphql`,
+        verbose: true,
+        excludeFields: [`blocksJSON`, `saveContent`],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,6 +41,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
