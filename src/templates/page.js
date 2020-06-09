@@ -2,16 +2,29 @@
 import { jsx, Box, Container, Flex } from "theme-ui"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
+import { SectionBlock } from "../components/acfBlocks"
 
 const Page = ({ data }) => {
   const {
     title,
     content,
-    // flexLayouts: { flexibleLayouts },
+    flexLayouts: { flexibleLayouts },
   } = data.wpPage
   return (
     <Layout>
-      <h1>{title}</h1>
+      {flexibleLayouts &&
+        flexibleLayouts.length > 0 &&
+        flexibleLayouts.map(block => {
+          switch (block.__typename) {
+            // case "WpPage_Flexlayouts_FlexibleLayouts_CaseStudiesBlock":
+            //   return <CaseStudiesBlock {...block} />
+            case "WpPage_Flexlayouts_FlexibleLayouts_SectionBlock":
+              return <SectionBlock {...block} />
+
+            default:
+              return ""
+          }
+        })}
     </Layout>
   )
 }
@@ -23,14 +36,13 @@ export const pageQuery = graphql`
     wpPage(uri: { eq: $uri }) {
       content
       title
-      #   flexLayouts {
-      #     flexibleLayouts {
-      #       __typename
-      #       ...sectionBlockFragment
-      #       ...casesStudyBlockFragment
-
-      #     }
-      #   }
+      flexLayouts {
+        flexibleLayouts {
+          __typename
+          ...sectionBlockFragment
+          # ...casesStudyBlockFragment
+        }
+      }
     }
   }
 `
