@@ -7,17 +7,23 @@ import SiteBranding from "./SiteBranding"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query {
       wp {
         generalSettings {
           title
           url
         }
       }
+      site {
+        siteMetadata {
+          description
+        }
+      }
     }
   `)
 
   const { title } = data.wp.generalSettings
+  const { description } = data.site.siteMetadata
 
   return (
     <header className="header">
@@ -28,7 +34,7 @@ const Header = () => {
             display: `flex`,
           }}
         >
-          <SiteBranding title={title} />
+          <SiteBranding title={title} description={description} />
         </Box>
         <Box
           sx={{
