@@ -1,22 +1,11 @@
-import {
-  form,
-  search,
-  colors,
-  buttons,
-  text,
-  card,
-  gradients,
-  header,
-  footer,
-  list,
-} from './components'
+import { colors, text, header } from "./components"
 import {
   fonts,
   fontSizes,
   fontWeights,
   lineHeights,
   base,
-} from './components/typo'
+} from "./components/typo"
 
 export default {
   colors,
@@ -25,14 +14,8 @@ export default {
   fontWeights,
   lineHeights,
   text,
-  gradients,
-  buttons,
-  card,
-  search,
-  form,
-  list,
   header,
-  footer,
+
   sizes: {
     container: 1200,
     s: 300,
