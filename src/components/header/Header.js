@@ -26,12 +26,12 @@ const Header = () => {
   const { description } = data.site.siteMetadata
 
   return (
-    <header className="header">
+    <header className="header" sx={{ ...style }}>
       <Container className="container">
         <Box
           sx={{
             width: [`100%`, `50%`],
-            display: `flex`,
+            // display: `flex`,
           }}
         >
           <SiteBranding title={title} description={description} />
@@ -55,12 +55,12 @@ const Header = () => {
                   listStyleType: "none",
                   mr: 16,
                   a: {
-                    color: "white",
+                    color: "secondary",
                     textTransform: "uppercase",
-                    fontWeight: 700,
-                    fontSize: "xs",
+                    fontWeight: 400,
+                    fontSize: "xxs",
                     "&:hover": {
-                      color: "yellow",
+                      color: "primary",
                     },
                   },
                 },
@@ -82,3 +82,27 @@ const Header = () => {
 }
 
 export default Header
+
+const style = {
+  bg: "white",
+  margin: "none",
+
+  ".container": {
+    display: ["block", "flex"],
+    justifyContent: ["center", "space-between"],
+    flexWrap: "wrap",
+    alignItems: "center",
+    fontSize: "m",
+    margin: "0 auto",
+    maxWidth: "container",
+    py: 30,
+    px: [10, 30],
+    width: "90vw",
+  },
+
+  ".headroom--pinned &": {
+    ">div": {
+      py: "xxs",
+    },
+  },
+}
