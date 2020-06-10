@@ -17,7 +17,7 @@ export default {
   header,
 
   sizes: {
-    container: 1200,
+    container: 1400,
     s: 300,
     m: 600,
     l: 900,

@@ -6,8 +6,8 @@ export const fonts = {
 }
 
 export const fontWeights = {
-  body: 500,
-  heading: "black",
+  body: 400,
+  heading: "bold",
   bold: 700,
   black: 900,
 }
@@ -15,7 +15,7 @@ export const fontWeights = {
 export const fontSizes = {
   xxs: rem("12px"),
   xs: rem("14px"),
-  s: rem("18px"),
+  s: rem("16px"),
   m: rem("20px"),
   l: rem("24px"),
   xl: rem("32px"),
@@ -25,7 +25,7 @@ export const fontSizes = {
 }
 
 export const lineHeights = {
-  body: 1.6,
+  body: 1.5,
   heading: 1.1,
   loose: 2,
   none: 1,
@@ -43,11 +43,11 @@ const heading = {
 
 export const a = {
   variant: "transitions.m",
-  color: "accent",
+  color: "black",
   fontWeight: "bold",
   textDecoration: "none",
   "&:hover": {
-    color: "primary",
+    color: "secondary",
   },
 }
 
@@ -88,14 +88,12 @@ export const h6 = {
   mb: "xxs",
 }
 export const blockquote = {
-  fontStyle: "italic",
-  bg: "background",
-  px: [20, 50],
-  py: 40,
-  borderLeft: "5px solid",
-  borderColor: "primary",
-  maxWidth: "800px !important",
-  mx: "auto",
+  fontFamily: "heading",
+  fontWeight: "bold",
+  fontSize: "l",
+  lineHeight: 1.6,
+  ml: 20,
+  py: 20,
 }
 
 export const base = {
