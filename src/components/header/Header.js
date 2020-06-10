@@ -110,18 +110,16 @@ const menuStyles = {
   ".menu-item": {
     listStyleType: "none",
     position: "relative",
-    mx: 17,
+    mx: 15,
     fontSize: 12,
     a: {
-      ".home-page &,.contact-page &,.services-page &": {
-        color: "white",
-      },
       color: "black",
       textTransform: "uppercase",
-      fontWeight: "normal",
+      fontWeight: "500",
       letterSpacing: 1.6,
+      color: "secondary",
       "&:hover": {
-        color: "primary",
+        color: "black",
       },
     },
     "&.login": {
@@ -148,14 +146,23 @@ const menuStyles = {
       position: "absolute",
       top: 32,
       left: 0,
-      bg: "black",
-      a: { color: "white", "&:hover": { color: "primary" } },
+      // bg: "#f5f5f5",
+      a: { fontSize: 10, textAlign: "right" },
       width: "auto",
       whiteSpace: "nowrap",
       variant: "transitions.m",
       zIndex: 10,
-      py: 10,
-      fontFamily: "bold",
+      fontWeight: 600,
+      li: {
+        m: 0,
+      },
+      // py: 10,
+    },
+    "&:last-of-type": {
+      ">.sub-menu": {
+        textAlign: "right",
+        left: -111,
+      },
     },
   },
   ".has-subMenu": {
