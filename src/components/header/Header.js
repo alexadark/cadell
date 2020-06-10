@@ -51,7 +51,11 @@ const Header = () => {
               }}
             />
             <SlideSidebar
-              sx={{ display: ["block", "block", "block", "none"] }}
+              sx={{
+                "@media (min-width: 1300px)": {
+                  display: "none",
+                },
+              }}
             />
           </Box>
         </Container>
@@ -93,7 +97,11 @@ const style = {
   // },
 }
 const menuStyles = {
-  display: ["none", "none", "none", "block"],
+  display: "none",
+  "@media (min-width: 1300px)": {
+    display: "block",
+  },
+
   ">ul": {
     display: "flex",
     m: 0,
