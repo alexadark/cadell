@@ -4,12 +4,13 @@ import { Link } from "gatsby"
 
 const SiteBranding = ({ title, description, ...props }) => {
   return (
-    <Flex {...props} sx={{ alignItems: "center", ...style }}>
+    <div {...props} sx={{ ...style }}>
       <h1
         sx={{
-          display: "flex",
-          justifyContent: "center",
+          // display: ["block", "block", "block", "flex"],
+          // justifyContent: "center",
           width: ["100%", "auto"],
+          m: 0,
         }}
       >
         <Link to="/" rel="home">
@@ -20,28 +21,35 @@ const SiteBranding = ({ title, description, ...props }) => {
         className="description"
         dangerouslySetInnerHTML={{ __html: description }}
       />
-    </Flex>
+    </div>
   )
 }
 
 export default SiteBranding
 
 const style = {
+  "@media (min-width: 1440px)": {
+    display: "flex",
+  },
+  alignItems: "center",
   a: {
     fontFamily: "body",
     color: "secondary",
     textTransform: "uppercase",
-    letterSpacing: 1.5,
+    letterSpacing: 6,
     fontSize: "xl",
   },
   ".description": {
-    ml: 15,
-    letterSpacing: 1.5,
+    "@media (min-width: 1440px)": {
+      ml: 10,
+    },
+    transform: "translateY(4px)",
+    // letterSpacing: 1.5,
     fontSize: "m",
     span: {
       color: "secondary",
       textTransform: "uppercase",
-      fontSize: "s",
+      fontSize: 15,
     },
   },
 }

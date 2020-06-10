@@ -16,7 +16,7 @@ export const fontSizes = {
   xxs: rem("12px"),
   xs: rem("14px"),
   s: rem("16px"),
-  m: rem("20px"),
+  m: rem("18px"),
   l: rem("24px"),
   xl: rem("32px"),
   xxl: rem("48px"),

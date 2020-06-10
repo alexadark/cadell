@@ -89,7 +89,7 @@ export const SectionBlock = ({
 
 const style = {
   minHeight: "100vh",
-  py: 100,
+  py: 50,
   px: [20, 50],
   ".sectionWrap": {
     flexWrap: "wrap",
