@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 const SiteBranding = ({ title, description, ...props }) => {
   return (
-    <div {...props} sx={{ ...style }}>
+    <div {...props} sx={{ ...style }} className="logo">
       <h1
         sx={{
           // display: ["block", "block", "block", "flex"],

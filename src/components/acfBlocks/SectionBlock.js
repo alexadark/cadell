@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import { jsx, Grid, Flex, Container } from "theme-ui"
+import { useRef, useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import Img from "../images/Image"
+import { window, document, exists } from "browser-monads"
 
 export const fragment = graphql`
   fragment sectionBlockFragment on WpPage_Flexlayouts_FlexibleLayouts_SectionBlock {
@@ -49,18 +51,43 @@ export const SectionBlock = ({
   link,
   legalText,
 }) => {
+  const sectionRef = useRef()
+  useEffect(() => {
+    console.log("sectionRef", sectionRef.current.classList)
+
+    if (exists(window)) {
+      const addAnimClass = () =>
+        window.matchMedia("(min-width: 900px)").matches &&
+        sectionRef.current.classList.add("animSection")
+      // window.onResize = addAnimClass
+      window.addEventListener(
+        "resize",
+        window.matchMedia("(min-width: 900px)").matches
+          ? sectionRef.current.classList.add("animSection")
+          : sectionRef.current.classList.remove("animSection")
+      )
+    }
+  }, [])
+
   return (
-    <section id={anchor || ""} className="sectionBlock" sx={{ ...style }}>
+    <section
+      id={anchor || ""}
+      className={`sectionBlock`}
+      sx={{ ...style }}
+      ref={sectionRef}
+    >
       <Container>
-        <Grid columns={[1, 1, "1fr 1fr"]} gap={80} className="sectionWrap">
+        <Grid columns={[1, 1, "1fr 1.3fr"]} gap={80} className="sectionWrap">
           <div className="painting">
-            <div className="pic">
-              <Img img={image} />
+            <div className="paintingWrap">
+              <div className="pic">
+                <Img img={image} />
+              </div>
+              {/* <img src={image.publicURL} alt="" /> */}
+              <h5 className="painter">{painter}</h5>
+              <h5 className="paintTitle">{paintTitle}</h5>
+              <h5 className="status">{status}</h5>
             </div>
-            {/* <img src={image.publicURL} alt="" /> */}
-            <h5 className="painter">{painter}</h5>
-            <h5 className="paintTitle">{paintTitle}</h5>
-            <h5 className="status">{status}</h5>
           </div>
           <div className="text">
             <h3 dangerouslySetInnerHTML={{ __html: title }} />
@@ -88,10 +115,11 @@ export const SectionBlock = ({
 }
 
 const style = {
-  minHeight: "100vh",
-  py: 50,
+  // pt: 150,
+  // pb: 50,
   px: [20, 50],
   ".sectionWrap": {
+    minHeight: "100vh",
     flexWrap: "wrap",
     alignItems: "center",
   },

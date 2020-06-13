@@ -1,10 +1,45 @@
 /** @jsx jsx */
 import { jsx, Box, Container, Flex } from "theme-ui"
+import { useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { SectionBlock, CaseStudiesBlock } from "../components/acfBlocks"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { window, document, exists } from "browser-monads"
 
 const Page = ({ data }) => {
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      gsap.registerPlugin(ScrollTrigger)
+      gsap.core.globals("ScrollTrigger", ScrollTrigger)
+    }
+
+    const sections = exists(document)
+      ? document.querySelectorAll(".animSection")
+      : ""
+
+    sections.forEach(section => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          // start: "top-=10% top",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+          pin: true,
+          // markers: true,
+          // ease: "power4.out",
+          // toggleActions: "play reverse none reverse",
+        },
+      })
+      tl.fromTo(
+        section.querySelector(".text"),
+        { y: 0 },
+        { duration: 1, y: "-80%" }
+      )
+    })
+  }, [])
   const {
     title,
     content,

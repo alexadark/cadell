@@ -74,8 +74,11 @@ const Header = () => {
 export default Header
 
 const style = {
-  bg: "white",
+  bg: "#fff",
   margin: "none",
+  // position: "fixed",
+  // width: "100%",
+  // zIndex: 10,
 
   ".container": {
     display: ["block", "flex"],
@@ -89,12 +92,19 @@ const style = {
     px: [10, 0],
     width: "90vw",
   },
+  ".logo": {
+    mt: -5,
+  },
 
-  // ".headroom--pinned &": {
-  //   ">div": {
-  //     py: "xxs",
-  //   },
-  // },
+  ".headroom--pinned &": {
+    boxShadow: "small",
+    ">div": {
+      py: "xxs",
+    },
+    ".logo": {
+      mt: -13,
+    },
+  },
 }
 const menuStyles = {
   display: "none",
