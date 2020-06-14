@@ -3,6 +3,7 @@ import { jsx, Grid, Flex, Container } from "theme-ui"
 import { useRef, useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import Img from "../images/Image"
+import linkStyles from "../../styles/bottomLinkStyle"
 import { window, document, exists } from "browser-monads"
 
 export const fragment = graphql`
@@ -73,7 +74,7 @@ export const SectionBlock = ({
     <section
       id={anchor || ""}
       className={`sectionBlock`}
-      sx={{ ...style }}
+      sx={{ ...style, ...linkStyles }}
       ref={sectionRef}
     >
       <Container>
@@ -116,7 +117,7 @@ export const SectionBlock = ({
 
 const style = {
   // pt: 150,
-  // pb: 50,
+  // pb: [50, 50, 0],
   px: [20, 50],
   ".sectionWrap": {
     minHeight: "100vh",
@@ -151,22 +152,5 @@ const style = {
     fontWeight: "bold",
     fontSize: 11,
     letterSpacing: 1,
-  },
-  ".bottomLink,.bottomLink a": {
-    textTransform: "uppercase",
-    fontSize: "xxs",
-    color: "black",
-    m: 0,
-  },
-  ".linkTitle": {
-    lineHeight: 0.8,
-  },
-  ".bottomLink": {
-    a: {
-      variant: "transitions.m",
-      "&:hover": {
-        color: "secondary",
-      },
-    },
   },
 }

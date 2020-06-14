@@ -18,13 +18,14 @@ const CSItem = ({ title, content, key, ...props }) => {
       {...props}
     >
       <Flex sx={{ alignItems: "center", mb: 50 }}>
-        <Button
-          className="open"
+        <div
+          className="button open"
           icon={<Close />}
-          //   plain
+          aria-label="open case study"
           onClick={toggleModal}
-          gap="none"
-        />
+        >
+          <Close />
+        </div>
         <h3 className="csTitle" sx={{ fontSize: 22 }}>
           {title}
         </h3>
@@ -40,7 +41,7 @@ const CSItem = ({ title, content, key, ...props }) => {
             sx={{
               position: "absolute",
               width: "100%",
-              height: "100%",
+              height: ["100vh", "100vh", "100%"],
               bg: "white",
               zIndex: 10,
               top: 0,
@@ -52,14 +53,14 @@ const CSItem = ({ title, content, key, ...props }) => {
             <Container sx={{ maxWidth: 1200 }}>
               <Grid columns={[1, 1, 2]} gap={40} sx={{ alignItems: "start" }}>
                 <Flex sx={{ alignItems: "flex-start" }}>
-                  <Button
-                    className="close"
-                    icon={<Close />}
-                    plain
+                  <div
+                    className="button close"
+                    aria-label="close case study"
                     onClick={toggleModal}
-                    gap="none"
                     sx={{ position: "relative", top: 15 }}
-                  />
+                  >
+                    <Close />
+                  </div>
                   <h3 className="csTitle" sx={{ fontSize: 22 }}>
                     {title}
                   </h3>
@@ -80,8 +81,9 @@ const CSItem = ({ title, content, key, ...props }) => {
 export default CSItem
 
 const style = {
-  button: {
+  ".button": {
     pr: 20,
+    cursor: "pointer",
     focus: {
       outline: "none",
     },
