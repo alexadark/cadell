@@ -54,8 +54,6 @@ export const SectionBlock = ({
 }) => {
   const sectionRef = useRef()
   useEffect(() => {
-    console.log("sectionRef", sectionRef.current.classList)
-
     if (exists(window)) {
       const addAnimClass = () =>
         window.matchMedia("(min-width: 900px)").matches &&

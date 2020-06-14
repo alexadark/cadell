@@ -29,8 +29,12 @@ const Page = ({ data }) => {
           scrub: true,
           pin: true,
           // markers: true,
-          // ease: "power4.out",
-          // toggleActions: "play reverse none reverse",
+          ease: "power4.out",
+
+          onEnterBack: self =>
+            self.getVelocity() < -1200 &&
+            gsap.to(".text", { duration: 1, y: 0 }) &&
+            console.log("anim"),
         },
       })
       tl.fromTo(
