@@ -11,8 +11,9 @@ export const fragment = graphql`
 
 export const ArtistsBlock = ({ anchor, artists }) => {
   return (
-    <section id={anchor || ""} className="artists">
-      <Container>
+    <section id={anchor || ""} className="artists" sx={{ ...style }}>
+      <Container sx={{ px: "30px !important" }}>
+        <h4>A selection of artists Cadell has advised on</h4>
         <div
           className="artists"
           dangerouslySetInnerHTML={{ __html: artists }}
@@ -20,4 +21,22 @@ export const ArtistsBlock = ({ anchor, artists }) => {
       </Container>
     </section>
   )
+}
+const style = {
+  my: 150,
+  h4: {
+    fontFamily: "body",
+    mb: 50,
+  },
+  ".artists": {
+    ul: {
+      m: 0,
+      columns: ["250px 4"],
+    },
+    li: {
+      listStyleType: "none",
+      fontSize: "s",
+      textTransform: "uppercase",
+    },
+  },
 }

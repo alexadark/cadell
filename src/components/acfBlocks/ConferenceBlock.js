@@ -58,7 +58,8 @@ export const ConferenceBlock = ({ anchor, conferences }) => {
 }
 
 const style = {
-  my: 200,
+  py: 150,
+  bg: "#fafafa",
   ".conferences": {
     flexWrap: "wrap",
     justifyContent: "center",

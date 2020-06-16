@@ -56,7 +56,7 @@ export const ManagementBlock = ({ anchor, info, members }) => {
 
 const style = {
   mt: 50,
-  mb: 200,
+  mb: 150,
   ".name": {
     fontFamily: "body",
     color: "black",
