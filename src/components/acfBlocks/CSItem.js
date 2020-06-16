@@ -39,9 +39,10 @@ const CSItem = ({ title, content, key, ...props }) => {
             transition={{ duration: 0.5 }}
             className="modal"
             sx={{
-              position: "absolute",
+              position: "fixed",
               width: "100%",
               height: ["100vh", "100vh", "100%"],
+              overflowY: "hidden",
               bg: "white",
               zIndex: 10,
               top: 0,

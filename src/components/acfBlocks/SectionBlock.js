@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import { jsx, Grid, Flex, Container } from "theme-ui"
+import { jsx, Grid, Container } from "theme-ui"
 import { useRef, useEffect } from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "../images/Image"
 import linkStyles from "../../styles/bottomLinkStyle"
 import { window, document, exists } from "browser-monads"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 export const fragment = graphql`
   fragment sectionBlockFragment on WpPage_Flexlayouts_FlexibleLayouts_SectionBlock {
@@ -103,7 +104,7 @@ export const SectionBlock = ({
             {link && (
               <div className="bottomLink">
                 <div className="linkTitle">{linkTitle}</div>
-                <Link to={link.url}>{link.title}</Link>
+                <AnchorLink href={link.url}>{link.title}</AnchorLink>
               </div>
             )}
           </div>

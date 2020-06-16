@@ -28,6 +28,7 @@ const Page = ({ data }) => {
           end: "bottom top",
           scrub: true,
           pin: true,
+          // toggleActions: "play reset play reset",
           // markers: true,
           ease: "power4.out",
 

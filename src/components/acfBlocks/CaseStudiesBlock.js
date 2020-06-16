@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx, Flex, Container, Grid } from "theme-ui"
 import CSItem from "./CSItem"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import linkStyles from "../../styles/bottomLinkStyle"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 export const fragment = graphql`
   fragment caseStudiesBlockFragment on WpPage_Flexlayouts_FlexibleLayouts_CaseStudiesBlock {
@@ -43,7 +44,8 @@ export const CaseStudiesBlock = ({ anchor, title, caseStudies, link }) => {
         </Grid>
         <div className="bottomLink" sx={{ pt: 100, ml: "50%" }}>
           <div className="linkTitle">Back</div>
-          <Link to={link.url}>{link.title}</Link>
+
+          <AnchorLink href={link.url}>{link.title}</AnchorLink>
         </div>
       </Container>
     </Flex>
