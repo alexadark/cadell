@@ -3,12 +3,23 @@ import { jsx, Flex, Grid, Container } from "theme-ui"
 import React, { useState } from "react"
 import { Close } from "grommet-icons"
 import { Button } from "grommet"
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock"
 import { motion, AnimatePresence } from "framer-motion"
 
 const CSItem = ({ title, content, key, ...props }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const closeModal = () => setIsOpen(false)
-  const toggleModal = () => setIsOpen(!isOpen)
+  const closeModal = () => {
+    setIsOpen(false)
+    // clearAllBodyScrollLocks()
+  }
+  const openModal = () => {
+    setIsOpen(true)
+    // disableBodyScroll()
+  }
   const openClass = isOpen ? "open" : "closed"
   return (
     <div
@@ -22,7 +33,7 @@ const CSItem = ({ title, content, key, ...props }) => {
           className="button open"
           icon={<Close />}
           aria-label="open case study"
-          onClick={toggleModal}
+          onClick={openModal}
         >
           <Close />
         </div>
@@ -57,7 +68,7 @@ const CSItem = ({ title, content, key, ...props }) => {
                   <div
                     className="button close"
                     aria-label="close case study"
-                    onClick={toggleModal}
+                    onClick={closeModal}
                     sx={{ position: "relative", top: 15 }}
                   >
                     <Close />
