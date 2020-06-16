@@ -7,6 +7,7 @@ import {
   SectionBlock,
   CaseStudiesBlock,
   ManagementBlock,
+  ConferenceBlock,
 } from "../components/acfBlocks"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -66,6 +67,8 @@ const Page = ({ data }) => {
               return <SectionBlock {...block} />
             case "WpPage_Flexlayouts_FlexibleLayouts_ManagementBlock":
               return <ManagementBlock {...block} />
+            case "WpPage_Flexlayouts_FlexibleLayouts_ConferenceBlock":
+              return <ConferenceBlock {...block} />
 
             default:
               return ""
@@ -88,6 +91,7 @@ export const pageQuery = graphql`
           ...sectionBlockFragment
           ...caseStudiesBlockFragment
           ...managementBlockFragment
+          ...conferenceBlockFragment
         }
       }
     }

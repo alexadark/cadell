@@ -14,7 +14,7 @@ export const fragment = graphql`
       image {
         localFile {
           childImageSharp {
-            fixed(toFormat: JPG, width: 200) {
+            fixed(toFormat: JPG, width: 145) {
               ...GatsbyImageSharpFixed_tracedSVG
             }
           }
@@ -33,7 +33,7 @@ export const ManagementBlock = ({ anchor, info, members }) => {
             members.map((member, i) => {
               const { name, content, email, image } = member
               return (
-                <div className="member">
+                <div key={i} className="member">
                   <Img
                     fixed={image.localFile.childImageSharp.fixed}
                     alt={name}
