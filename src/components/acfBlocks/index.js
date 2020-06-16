@@ -1,2 +1,5 @@
 export * from "./SectionBlock"
 export * from "./CaseStudiesBlock"
+export * from "./ManagementBlock"
+export * from "./ConferencesBlock"
+export * from "./ArtistsBlock"

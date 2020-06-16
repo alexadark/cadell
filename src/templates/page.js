@@ -3,7 +3,11 @@ import { jsx, Box, Container, Flex } from "theme-ui"
 import { useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import { SectionBlock, CaseStudiesBlock } from "../components/acfBlocks"
+import {
+  SectionBlock,
+  CaseStudiesBlock,
+  ManagementBlock,
+} from "../components/acfBlocks"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { window, document, exists } from "browser-monads"
@@ -60,6 +64,8 @@ const Page = ({ data }) => {
               return <CaseStudiesBlock {...block} />
             case "WpPage_Flexlayouts_FlexibleLayouts_SectionBlock":
               return <SectionBlock {...block} />
+            case "WpPage_Flexlayouts_FlexibleLayouts_ManagementBlock":
+              return <ManagementBlock {...block} />
 
             default:
               return ""
@@ -81,6 +87,7 @@ export const pageQuery = graphql`
           __typename
           ...sectionBlockFragment
           ...caseStudiesBlockFragment
+          ...managementBlockFragment
         }
       }
     }
