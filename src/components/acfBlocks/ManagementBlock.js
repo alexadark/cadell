@@ -26,9 +26,9 @@ export const fragment = graphql`
 
 export const ManagementBlock = ({ anchor, info, members }) => {
   return (
-    <section id={anchor || ""} className="management">
+    <section id={anchor || ""} className="management" sx={{ ...style }}>
       <Container sx={{ px: "30px !important" }}>
-        <Grid columns={[1, 1, 2]} gap={50}>
+        <Grid columns={[1, 1, 2]} gap={100}>
           {members &&
             members.map((member, i) => {
               const { name, content, email, image } = member
@@ -38,10 +38,12 @@ export const ManagementBlock = ({ anchor, info, members }) => {
                     fixed={image.localFile.childImageSharp.fixed}
                     alt={name}
                   />
-                  <h4>{name}</h4>
-                  <p>{content}</p>
+                  <h4 className="name">{name}</h4>
+                  <p className="content">{content}</p>
 
-                  <a href={`mailto:${email}`}>Email - {email}</a>
+                  <a className="mail" href={`mailto:${email}`}>
+                    Email - {email}
+                  </a>
                 </div>
               )
             })}
@@ -50,4 +52,27 @@ export const ManagementBlock = ({ anchor, info, members }) => {
       </Container>
     </section>
   )
+}
+
+const style = {
+  mt: 50,
+  mb: 200,
+  ".name": {
+    fontFamily: "body",
+    color: "black",
+    mt: 10,
+  },
+  ".content": {
+    mb: 50,
+  },
+  ".mail": {
+    color: "purple",
+    fontSize: "s",
+    "&:hover": {
+      color: "black",
+    },
+  },
+  ".info": {
+    mt: 100,
+  },
 }

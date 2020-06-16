@@ -6,4 +6,5 @@ export const colors = {
   secondary: lightGrey,
   text: darkGrey,
   background: "#fff",
+  purple: "#6567A2",
 }
