@@ -1,8 +1,11 @@
 /** @jsx jsx */
-import { jsx, Grid, Container, Flex } from "theme-ui"
+import { jsx, Container, Flex } from "theme-ui"
+import { useEffect } from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import stepLogo from "../../images/stepLogo.png"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 export const fragment = graphql`
   fragment conferenceBlockFragment on WpPage_Flexlayouts_FlexibleLayouts_ConferenceBlock {
@@ -24,6 +27,28 @@ export const fragment = graphql`
 `
 
 export const ConferenceBlock = ({ anchor, conferences }) => {
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      gsap.registerPlugin(ScrollTrigger)
+      gsap.core.globals("ScrollTrigger", ScrollTrigger)
+    }
+    gsap.defaults({ ease: "power3" })
+    gsap.set(".confWrap", { y: 50 })
+
+    ScrollTrigger.batch(".confWrap", {
+      onEnter: batch =>
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          stagger: { each: 0.15 },
+          overwrite: true,
+        }),
+      onEnterBack: batch =>
+        gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
+      onLeaveBack: batch =>
+        gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
+    })
+  }, [])
   return (
     <section id={anchor || ""} className="management" sx={{ ...style }}>
       <Container sx={{ px: "30px !important" }}>
