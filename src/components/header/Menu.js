@@ -80,7 +80,7 @@ const Menu = ({ ...props }) => {
 
   if (menuItems) {
     return (
-      <nav sx={{ variant: `menus.header`, ...styles }} {...props}>
+      <nav className="menu" sx={{ variant: `menus.header` }} {...props}>
         <ul role="menu">
           {data.wpMenu.menuItems.nodes.map(menuItem => {
             if (menuItem.childItems.nodes.length) {
@@ -98,4 +98,3 @@ const Menu = ({ ...props }) => {
 }
 
 export default Menu
-const styles = {}
