@@ -78,7 +78,7 @@ export const SectionBlock = ({
     >
       <Container>
         <Grid columns={[1, 1, "1fr 1.3fr"]} gap={80} className="sectionWrap">
-          <div className="painting">
+          <div className="painting" sx={{ transform: "translateY(70px)" }}>
             <div className="paintingWrap">
               <div className="pic">
                 <Img img={image} />
@@ -115,13 +115,17 @@ export const SectionBlock = ({
 }
 
 const style = {
+  "&:nth-child(even)": {
+    bg: "#fbfbfb",
+  },
   // pt: 150,
   // pb: [50, 50, 0],
+  py: 100,
   px: [20, 50],
   ".sectionWrap": {
-    minHeight: "100vh",
+    // minHeight: "100vh",
     flexWrap: "wrap",
-    alignItems: "center",
+    // alignItems: "center",
   },
   ".text": {
     h3: {
@@ -130,7 +134,11 @@ const style = {
   },
   ".quote": {
     fontFamily: "heading",
+    fontSize: "s",
     mb: 50,
+    blockquote: {
+      fontSize: 21,
+    },
     ".quoteAuthor": { fontWeight: "bold" },
   },
   ".legalText": {

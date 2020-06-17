@@ -33,21 +33,29 @@ const Page = ({ data }) => {
           start: "top top",
           end: "bottom top",
           scrub: true,
-          pin: true,
+          // pin: true,
           // toggleActions: "play reset play reset",
           // markers: true,
           ease: "power4.out",
 
-          onEnterBack: self =>
-            self.getVelocity() < -1200 &&
-            gsap.to(".text", { duration: 1, y: 0 }) &&
-            console.log("anim"),
+          // onEnterBack: self =>
+          //   self.getVelocity() < -1200 &&
+          //   gsap.to(".text", { duration: 1, y: 0 }) &&
+          //   console.log("anim"),
         },
       })
       tl.fromTo(
         section.querySelector(".text"),
         { y: 0 },
-        { duration: 1, y: "-80%" }
+        { duration: 1, y: "-100%" }
+      ).to(
+        section.querySelector(".painting"),
+        {
+          duration: 1,
+          y: "-150%",
+          opacity: 0,
+        },
+        "-=0.3"
       )
     })
   }, [])
