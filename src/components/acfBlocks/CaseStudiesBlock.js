@@ -29,9 +29,12 @@ export const CaseStudiesBlock = ({ anchor, title, caseStudies, link }) => {
       sx={{
         position: "relative",
         px: "30px !important",
-        py: [50, 50, 0],
-        height: ["auto", "auto", "100vh"],
+        py: [50, 50, 100],
+        // height: ["auto", "auto", "100vh"],
         alignItems: "center",
+        "&:nth-child(even)": {
+          bg: "light",
+        },
       }}
     >
       <Container sx={{ ...linkStyles }}>

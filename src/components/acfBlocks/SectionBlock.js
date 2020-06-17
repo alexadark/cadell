@@ -116,11 +116,11 @@ export const SectionBlock = ({
 
 const style = {
   "&:nth-child(even)": {
-    bg: "#fbfbfb",
+    bg: "light",
   },
   // pt: 150,
   // pb: [50, 50, 0],
-  py: 100,
+  py: [50, 50, 100],
   px: [20, 50],
   ".sectionWrap": {
     // minHeight: "100vh",

@@ -33,7 +33,7 @@ const Page = ({ data }) => {
           start: "top top",
           end: "bottom top",
           scrub: true,
-          // pin: true,
+          // pin: "body",
           // toggleActions: "play reset play reset",
           // markers: true,
           ease: "power4.out",

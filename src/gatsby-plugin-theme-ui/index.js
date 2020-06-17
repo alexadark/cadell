@@ -1,4 +1,4 @@
-import { colors, text, header } from "./components"
+import { colors, text } from "./components"
 import {
   fonts,
   fontSizes,
@@ -14,7 +14,6 @@ export default {
   fontWeights,
   lineHeights,
   text,
-  header,
 
   sizes: {
     container: 1400,

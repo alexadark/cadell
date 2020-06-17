@@ -12,6 +12,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-sass",
+    "@bumped-inc/gatsby-plugin-optional-chaining",
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {

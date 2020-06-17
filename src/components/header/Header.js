@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Flex } from "theme-ui"
+import { useEffect, useRef } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Menu from "./Menu"
 import SlideSidebar from "./SlideSidebar"
 import SiteBranding from "./SiteBranding"
-import Headroom from "react-headroom"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -23,51 +23,58 @@ const Header = () => {
     }
   `)
 
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      window.addEventListener("scroll", () =>
+        window.scrollY > 100
+          ? headerRef.current?.classList.add("scrolled")
+          : headerRef.current?.classList.remove("scrolled")
+      )
+    }
+  }, [])
+
   const { title } = data.wp.generalSettings
   const { description } = data.site.siteMetadata
+  const headerRef = useRef()
 
   return (
-    <Headroom>
-      <header className="header" sx={{ ...style }}>
-        <Container className="container">
-          <Box
-            sx={{
-              width: [`100%`, `33%`],
-              // display: `flex`,
-            }}
-          >
-            <SiteBranding title={title} description={description} />
-          </Box>
-          <Box
-            sx={{
-              // width: [`100%`, `50%`],
-              display: `flex`,
-              justifyContent: `flex-end`,
-            }}
-          >
-            <Menu
-              sx={{
-                ...menuStyles,
-              }}
-            />
-            <SlideSidebar
-              sx={{
-                "@media (min-width: 1300px)": {
-                  display: "none",
-                },
-              }}
-            />
-          </Box>
-        </Container>
-        <Flex
+    <header className="header" sx={{ ...style }} ref={headerRef}>
+      <Container className="container">
+        <Box
           sx={{
-            position: `absolute`,
-            right: [`6%`, `6%`, `2%`],
-            top: 18,
+            width: [`100%`, `33%`],
+            // display: `flex`,
           }}
-        ></Flex>
-      </header>
-    </Headroom>
+        >
+          <SiteBranding title={title} description={description} />
+        </Box>
+        <Box
+          sx={{
+            // width: [`100%`, `50%`],
+            display: `flex`,
+            justifyContent: `flex-end`,
+          }}
+        >
+          <Menu
+            sx={{
+              ...menuStyles,
+            }}
+          />
+          <SlideSidebar
+            sx={{
+              display: ["block", "block", "block", "none"],
+            }}
+          />
+        </Box>
+      </Container>
+      <Flex
+        sx={{
+          position: `absolute`,
+          right: [`6%`, `6%`, `2%`],
+          top: 18,
+        }}
+      ></Flex>
+    </header>
   )
 }
 
@@ -76,9 +83,17 @@ export default Header
 const style = {
   bg: "#fff",
   margin: "none",
-  // position: "fixed",
-  // width: "100%",
-  // zIndex: 10,
+  position: "fixed",
+  width: "100%",
+  zIndex: 10,
+
+  variant: "transitions.m",
+  pt: 30,
+  pb: 10,
+  "&.scrolled": {
+    py: 10,
+    // boxShadow: "small",
+  },
 
   ".container": {
     display: ["block", "flex"],
@@ -88,12 +103,12 @@ const style = {
     fontSize: "m",
     margin: "0 auto",
     maxWidth: "container",
-    py: 30,
+
     px: [10, 0],
     width: "90vw",
   },
   ".logo": {
-    mt: -5,
+    mt: -15,
   },
 
   ".headroom--pinned &": {
@@ -107,10 +122,7 @@ const style = {
   },
 }
 const menuStyles = {
-  display: "none",
-  "@media (min-width: 1300px)": {
-    display: "block",
-  },
+  display: ["none", "none", "none", "block"],
 
   ">ul": {
     display: "flex",
@@ -120,8 +132,14 @@ const menuStyles = {
   ".menu-item": {
     listStyleType: "none",
     position: "relative",
-    mx: 15,
-    fontSize: 12,
+    mx: 10,
+    fontSize: 10,
+    mb: 0,
+    "@media (min-width: 1300px)": {
+      mx: 15,
+      fontSize: 12,
+    },
+
     a: {
       color: "black",
       textTransform: "uppercase",
@@ -156,7 +174,8 @@ const menuStyles = {
       position: "absolute",
       top: 32,
       left: 0,
-      // bg: "#f5f5f5",
+      bg: "white",
+      p: 10,
       a: { fontSize: 10, textAlign: "right" },
       width: "auto",
       whiteSpace: "nowrap",

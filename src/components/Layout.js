@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
     <Grommet theme={grommetTheme}>
       <Global styles={globalStyles} />
       <Header />
-      <main sx={{}}>{children}</main>
+      <main sx={{ pt: 100 }}>{children}</main>
     </Grommet>
   )
 }
