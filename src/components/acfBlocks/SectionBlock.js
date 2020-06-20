@@ -137,7 +137,7 @@ const style = {
     fontSize: "s",
     mb: 50,
     blockquote: {
-      fontSize: 21,
+      fontSize: 19,
     },
     ".quoteAuthor": { fontWeight: "bold" },
   },
