@@ -42,7 +42,14 @@ export const CaseStudiesBlock = ({ anchor, title, caseStudies, link }) => {
         <Grid columns={[1, 1, 2]} gap={40} className="caseStudiesWrap">
           {caseStudies &&
             caseStudies.map((cs, i) => {
-              return <CSItem key={i} title={cs.title} content={cs.content} />
+              return (
+                <CSItem
+                  className="caseStudy"
+                  key={i}
+                  title={cs.title}
+                  content={cs.content}
+                />
+              )
             })}
         </Grid>
         <div className="bottomLink" sx={{ pt: 100, ml: "50%" }}>

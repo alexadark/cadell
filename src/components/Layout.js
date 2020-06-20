@@ -5,10 +5,13 @@ import { Global } from "@emotion/core"
 import { globalStyles } from "../styles/GlobalStyles"
 import { Grommet } from "grommet"
 import grommetTheme from "../styles/grommet"
+import { useGsapReveal } from "../hooks"
 
 import "../styles/scss/styles.scss"
 
 const Layout = ({ children }) => {
+  useGsapReveal(50, 2, [".gsReveal"])
+
   return (
     <Grommet theme={grommetTheme}>
       <Global styles={globalStyles} />

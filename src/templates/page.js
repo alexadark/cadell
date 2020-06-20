@@ -26,36 +26,35 @@ const Page = ({ data }) => {
       : ""
 
     sections.forEach(section => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          // start: "top-=10% top",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-          // pin: "body",
-          // toggleActions: "play reset play reset",
-          // markers: true,
-          ease: "power4.out",
+      const tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: section,
+            // start: "top-=10% top",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            // pin: "body",
+            // toggleActions: "play reset play reset",
+            // markers: true,
+            ease: "power4.out",
 
-          // onEnterBack: self =>
-          //   self.getVelocity() < -1200 &&
-          //   gsap.to(".text", { duration: 1, y: 0 }) &&
-          //   console.log("anim"),
-        },
-      })
+            // onEnterBack: self =>
+            //   self.getVelocity() < -1200 &&
+            //   gsap.to(".text", { duration: 1, y: 0 }) &&
+            //   console.log("anim"),
+          },
+        })
+        .to(section.querySelector(".painting"), {
+          duration: 3,
+          y: "-25%",
+          opacity: 0,
+        })
       tl.fromTo(
         section.querySelector(".text"),
         { y: 0 },
-        { duration: 1, y: "-100%" }
-      ).to(
-        section.querySelector(".painting"),
-        {
-          duration: 1,
-          y: "-150%",
-          opacity: 0,
-        },
-        "-=0.3"
+        { duration: 1, y: "-10%" },
+        "-=0.1%"
       )
     })
   }, [])

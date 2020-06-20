@@ -13,9 +13,11 @@ export const ArtistsBlock = ({ anchor, artists }) => {
   return (
     <section id={anchor || ""} className="artists" sx={{ ...style }}>
       <Container sx={{ px: "30px !important" }}>
-        <h4>A selection of artists Cadell has advised on</h4>
+        <h4 className="gsReveal">
+          A selection of artists Cadell has advised on
+        </h4>
         <div
-          className="artists"
+          className="artists gsReveal"
           dangerouslySetInnerHTML={{ __html: artists }}
         />
       </Container>

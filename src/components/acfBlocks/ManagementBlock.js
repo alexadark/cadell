@@ -37,18 +37,22 @@ export const ManagementBlock = ({ anchor, info, members }) => {
                   <Img
                     fixed={image.localFile.childImageSharp.fixed}
                     alt={name}
+                    className="gsReveal"
                   />
-                  <h4 className="name">{name}</h4>
-                  <p className="content">{content}</p>
+                  <h4 className="name gsReveal">{name}</h4>
+                  <p className="content gsReveal">{content}</p>
 
-                  <a className="mail" href={`mailto:${email}`}>
+                  <a className="mail gsReveal" href={`mailto:${email}`}>
                     Email - {email}
                   </a>
                 </div>
               )
             })}
         </Grid>
-        <div className="info" dangerouslySetInnerHTML={{ __html: info }} />
+        <div
+          className="info gsReveal"
+          dangerouslySetInnerHTML={{ __html: info }}
+        />
       </Container>
     </section>
   )

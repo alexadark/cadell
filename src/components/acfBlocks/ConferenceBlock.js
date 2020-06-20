@@ -1,11 +1,9 @@
 /** @jsx jsx */
 import { jsx, Container, Flex } from "theme-ui"
-import { useEffect } from "react"
+
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import stepLogo from "../../images/stepLogo.png"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 export const fragment = graphql`
   fragment conferenceBlockFragment on WpPage_Flexlayouts_FlexibleLayouts_ConferenceBlock {
@@ -27,28 +25,6 @@ export const fragment = graphql`
 `
 
 export const ConferenceBlock = ({ anchor, conferences }) => {
-  useEffect(() => {
-    if (typeof window !== `undefined`) {
-      gsap.registerPlugin(ScrollTrigger)
-      gsap.core.globals("ScrollTrigger", ScrollTrigger)
-    }
-    gsap.defaults({ ease: "power3" })
-    gsap.set(".confWrap", { y: 50 })
-
-    ScrollTrigger.batch(".confWrap", {
-      onEnter: batch =>
-        gsap.to(batch, {
-          opacity: 1,
-          y: 0,
-          stagger: { each: 0.15 },
-          overwrite: true,
-        }),
-      onEnterBack: batch =>
-        gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
-      onLeaveBack: batch =>
-        gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
-    })
-  }, [])
   return (
     <section id={anchor || ""} className="management" sx={{ ...style }}>
       <Container sx={{ px: "30px !important" }}>
@@ -59,10 +35,13 @@ export const ConferenceBlock = ({ anchor, conferences }) => {
               return (
                 <div className="confWrap">
                   <div className="conf">
-                    <Img fluid={image.localFile.childImageSharp.fluid} />
-                    <div className="subtitle">{subtitle}</div>
+                    <Img
+                      className="gsReveal"
+                      fluid={image.localFile.childImageSharp.fluid}
+                    />
+                    <div className="subtitle gsReveal">{subtitle}</div>
                     <div
-                      className="content"
+                      className="content gsReveal"
                       dangerouslySetInnerHTML={{ __html: content }}
                     />
                   </div>
@@ -70,9 +49,9 @@ export const ConferenceBlock = ({ anchor, conferences }) => {
               )
             })}
         </Flex>
-        <div className="info">
+        <div className="info gsReveal">
           <img src={stepLogo} alt="Step Logo" />
-          <p className="subtitle">
+          <p className="subtitle gsReveal">
             Cadell have also been speakers at STEP events in; Geneva, Zurich,
             Monaco, Guernsey, Jersey, IoM and Dubai.
           </p>
