@@ -1,1 +1,1 @@
-export * from './useGsapReveal'
+export * from "./useGsapReveal"

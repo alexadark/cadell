@@ -135,6 +135,7 @@ const menuStyles = {
     mx: 10,
     fontSize: 10,
     mb: 0,
+
     "@media (min-width: 1300px)": {
       mx: 15,
       fontSize: 12,
@@ -146,6 +147,7 @@ const menuStyles = {
       fontWeight: "500",
       letterSpacing: 1.6,
       color: "secondary",
+
       "&:hover": {
         color: "black",
       },
