@@ -122,10 +122,13 @@ const style = {
   // pb: [50, 50, 0],
   py: [50, 50, 100],
   px: [20, 50],
+  // "&:first-of-type": {
+  //   pt: 20,
+  // },
   ".sectionWrap": {
-    // minHeight: "100vh",
-    flexWrap: "wrap",
-    // alignItems: "flex-end",
+    minHeight: "100%",
+    // flexWrap: "wrap",
+    // alignItems: "center",
   },
   ".text": {
     h3: {

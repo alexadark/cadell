@@ -31,12 +31,13 @@ const Page = ({ data }) => {
           trigger: section,
           // start: "top-=10% top",
           start: "top top",
-          end: "bottom top",
+          end: "bottom 10%",
           scrub: true,
-          // pin: true,
-          // toggleActions: "play reset play reset",
+          pin: section.querySelector(".painting"),
+          toggleActions: "play reset play reset",
           // markers: true,
-          // ease: "power4.out",
+          ease: "power4.out",
+          // pinSpacing: false,
           // onEnter: () => gsap.to(".painting", { duration: 1, y: 0 }),
 
           // onEnterBack: self =>
@@ -50,7 +51,7 @@ const Page = ({ data }) => {
       tl.fromTo(
         section.querySelector(".text"),
         { y: 0 },
-        { duration: 1, y: "-80%" }
+        { duration: 1, y: "-10%" }
       )
       tl.to(
         section.querySelector(".painting"),
@@ -59,7 +60,7 @@ const Page = ({ data }) => {
           y: "-50%",
           opacity: 0,
         },
-        "-=0.5"
+        "-=0.3"
       )
     })
   }, [])
