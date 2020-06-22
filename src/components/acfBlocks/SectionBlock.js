@@ -125,7 +125,7 @@ const style = {
   ".sectionWrap": {
     // minHeight: "100vh",
     flexWrap: "wrap",
-    // alignItems: "center",
+    // alignItems: "flex-end",
   },
   ".text": {
     h3: {

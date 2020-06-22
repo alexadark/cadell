@@ -26,35 +26,40 @@ const Page = ({ data }) => {
       : ""
 
     sections.forEach(section => {
-      const tl = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: section,
-            // start: "top-=10% top",
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-            // pin: "body",
-            // toggleActions: "play reset play reset",
-            // markers: true,
-            ease: "power4.out",
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          // start: "top-=10% top",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+          // pin: true,
+          // toggleActions: "play reset play reset",
+          // markers: true,
+          // ease: "power4.out",
+          // onEnter: () => gsap.to(".painting", { duration: 1, y: 0 }),
 
-            // onEnterBack: self =>
-            //   self.getVelocity() < -1200 &&
-            //   gsap.to(".text", { duration: 1, y: 0 }) &&
-            //   console.log("anim"),
-          },
-        })
-        .to(section.querySelector(".painting"), {
-          duration: 3,
-          y: "-25%",
-          opacity: 0,
-        })
+          // onEnterBack: self =>
+          //   self.getVelocity() < -1200 &&
+          //   gsap.to(".text", { duration: 1, y: 0 }) &&
+          //   console.log("anim"),
+        },
+      })
+
+      // tl.to(section.querySelector(".painting"), { duration: 1, y: 0 })
       tl.fromTo(
         section.querySelector(".text"),
         { y: 0 },
-        { duration: 1, y: "-10%" },
-        "-=0.1%"
+        { duration: 1, y: "-80%" }
+      )
+      tl.to(
+        section.querySelector(".painting"),
+        {
+          duration: 1,
+          y: "-50%",
+          opacity: 0,
+        },
+        "-=0.5"
       )
     })
   }, [])
