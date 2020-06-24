@@ -78,7 +78,7 @@ export const SectionBlock = ({
     >
       <Container>
         <Grid columns={[1, 1, "1fr 1.3fr"]} gap={80} className="sectionWrap">
-          <div className="painting" sx={{ transform: "translateY(70px)" }}>
+          <div className="painting">
             <div className="paintingWrap">
               <div className="pic">
                 <Img img={image} />
@@ -147,7 +147,9 @@ const style = {
   ".legalText": {
     fontSize: "xxs",
   },
-  ".painting": {},
+  ".painting": {
+    transform: "translateY(70px)",
+  },
   ".pic": {
     mb: 10,
     img: {
@@ -165,5 +167,16 @@ const style = {
     fontWeight: "bold",
     fontSize: 11,
     letterSpacing: 1,
+  },
+  "&#collectionStrategy": {
+    // ".sectionWrap": {
+    //   alignItems: "center",
+    // },
+    // ".painting": {
+    //   transform: "translateY(0)",
+    // },
+    ".painting": {
+      width: ["100%", "100%", "65%"],
+    },
   },
 }
