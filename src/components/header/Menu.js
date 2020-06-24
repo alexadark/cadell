@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { createLocalLink } from "../../utils"
+import { Collapse } from "../ui-components"
 
 const MENU_QUERY = graphql`
   fragment MenuFields on WpMenuItem {
@@ -52,28 +54,43 @@ const renderMenuItem = menuItem => {
   }
 }
 
-const renderSubMenu = menuItem => {
+const WithCollapse = ({ orientation, children, menuItem }) =>
+  orientation === "vertical" ? (
+    <Collapse menuItem={menuItem}>{children}</Collapse>
+  ) : (
+    children
+  )
+
+const renderSubMenu = (menuItem, orientation) => {
   return (
-    <li className="has-subMenu menu-item" key={menuItem.id}>
+    <li
+      className="has-subMenu menu-item"
+      key={menuItem.id}
+      sx={{ position: "relative" }}
+    >
       {renderLink(menuItem)}
 
-      <ul className="menuItemGroup sub-menu">
-        {menuItem.childItems.nodes.map(item => renderMenuItem(item))}
-      </ul>
+      <WithCollapse orientation={orientation} menuItem={menuItem}>
+        <ul className="menuItemGroup sub-menu">
+          {menuItem.childItems.nodes.map(item => renderMenuItem(item))}
+        </ul>
+      </WithCollapse>
     </li>
   )
 }
 
-const Menu = ({ ...props }) => {
+const Menu = ({ orientation, ...props }) => {
   const data = useStaticQuery(MENU_QUERY)
   const { menuItems } = data.wpMenu
+  const [url, setUrl] = useState(window.location.href)
 
   return (
     <nav className="menu" sx={{ variant: `menus.header` }} {...props}>
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
       <ul role="menu">
-        {data.wpMenu.menuItems.nodes.map(menuItem => {
+        {menuItems.nodes.map(menuItem => {
           if (menuItem.childItems.nodes.length) {
-            return renderSubMenu(menuItem)
+            return renderSubMenu(menuItem, orientation)
           } else {
             return renderMenuItem(menuItem)
           }

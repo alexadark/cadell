@@ -6,8 +6,6 @@ import { Menu as MenuIcon, Close } from "grommet-icons"
 import { Layer, Button } from "grommet"
 import Menu from "./Menu.js"
 
-import slideSidebarStyles from "../../styles/slideSidebarStyles"
-
 const SlideSidebar = ({ ...props }) => {
   const [isMenuOpen, setOpenMenu] = useState(false)
   const [openClass, setOpenClass] = useState(false)
@@ -56,7 +54,7 @@ const SlideSidebar = ({ ...props }) => {
             onClick={closeMenu}
           />
 
-          <Menu />
+          <Menu orientation="vertical" />
         </Layer>
       )}
     </Box>
@@ -68,7 +66,7 @@ export default SlideSidebar
 const style = {
   fontFamily: "body",
   borderRadius: 0,
-  bg: "white",
+  bg: "slideSidebarBg",
   width: ["100%", "468px"],
   display: "flex",
   overflowY: "scroll",
@@ -77,7 +75,6 @@ const style = {
 
   p: "xl",
   "&.menu-closing": {
-    // animation: `${pehaafadein} 1 .6s 0s cubic-bezier(0.165, 0.84, 0.44, 1)`,
     boxShadow: ["none", "-10px 0 0 rgba(0,0,0,0)"],
   },
   ".close": {
@@ -85,17 +82,11 @@ const style = {
     position: "fixed",
     top: 3,
     right: 3,
-    svg: { stroke: "primary" },
   },
   ".menu": {
     a: {
       textDecoration: "none",
-      color: "white",
-      fontFamily: "heading",
-      textTransform: "uppercase",
-      "&:hover": {
-        color: "red",
-      },
+      color: "text",
     },
     mb: "xxl",
     li: {
@@ -110,12 +101,9 @@ const style = {
         display: "block",
         py: "xs",
         borderBottom: "1px solid rgba(255,255,255,.15)",
-        color: "text",
-        fontFamily: "body",
-
+        color: "light",
         a: {
           color: "text",
-          fontFamily: "body",
         },
         "&:last-of-type": {
           border: "none",

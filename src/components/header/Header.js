@@ -63,6 +63,7 @@ const Header = () => {
           <SlideSidebar
             sx={{
               display: ["block", "block", "block", "none"],
+              mt: [-40, 0],
             }}
           />
         </Box>

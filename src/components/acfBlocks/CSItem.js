@@ -28,7 +28,7 @@ const CSItem = ({ title, content, key, ...props }) => {
       sx={{ ...style }}
       {...props}
     >
-      <Flex sx={{ alignItems: "center", mb: 50 }}>
+      <Flex sx={{ alignItems: "center", mb: 0 }}>
         <div
           className="button open"
           icon={<Close />}
@@ -37,7 +37,7 @@ const CSItem = ({ title, content, key, ...props }) => {
         >
           <Close />
         </div>
-        <h3 className="csTitle" sx={{ fontSize: 22 }}>
+        <h3 className="csTitle" sx={{ fontSize: 19, lineHeight: 1.5 }}>
           {title}
         </h3>
       </Flex>

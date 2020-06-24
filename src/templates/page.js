@@ -33,7 +33,7 @@ const Page = ({ data }) => {
           start: "top top",
           end: "bottom 10%",
           scrub: true,
-          pin: section.querySelector(".painting"),
+          // pin: section.querySelector(".painting"),
           toggleActions: "play reset play reset",
           // markers: true,
           ease: "power4.out",
@@ -51,7 +51,7 @@ const Page = ({ data }) => {
       tl.fromTo(
         section.querySelector(".text"),
         { y: 0 },
-        { duration: 1, y: "-10%" }
+        { duration: 1, y: "-80%" }
       )
       tl.to(
         section.querySelector(".painting"),
@@ -60,7 +60,7 @@ const Page = ({ data }) => {
           y: "-50%",
           opacity: 0,
         },
-        "-=0.3"
+        "-=0.5"
       )
     })
   }, [])
