@@ -49,7 +49,7 @@ const RenderLink = ({ menuItem, closeMenu, orientation }) => {
     <a
       onClick={e => {
         // e.preventDefault()
-        // scrollToItem("#expertise")
+        // scrollToItem(menuItem.url)
         orientation === "vertical" && closeMenu()
       }}
       href={menuItem.url}
@@ -96,7 +96,7 @@ const renderSubMenu = (menuItem, orientation, closeMenu) => {
         <ul className="menuItemGroup sub-menu">
           {menuItem.childItems.nodes.map(item => (
             <RenderLink
-              menuItem={menuItem}
+              menuItem={item}
               closeMenu={closeMenu}
               oruentation={orientation}
             />
