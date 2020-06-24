@@ -82,7 +82,6 @@ const renderSubMenu = (menuItem, orientation) => {
 const Menu = ({ orientation, ...props }) => {
   const data = useStaticQuery(MENU_QUERY)
   const { menuItems } = data.wpMenu
-  const [url, setUrl] = useState(window.location.href)
 
   return (
     <nav className="menu" sx={{ variant: `menus.header` }} {...props}>
