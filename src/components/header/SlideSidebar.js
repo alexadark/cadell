@@ -55,7 +55,7 @@ const SlideSidebar = ({ ...props }) => {
             onClick={closeMenu}
           />
 
-          <Menu orientation="vertical" />
+          <Menu orientation="vertical" closeMenu={closeMenu} />
         </Layer>
       )}
     </Box>
