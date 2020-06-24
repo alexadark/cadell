@@ -50,9 +50,10 @@ const RenderLink = ({ menuItem, closeMenu, orientation }) => {
       onClick={e => {
         // e.preventDefault()
         // scrollToItem(menuItem.url)
+        window.location.href = menuItem.url
         orientation === "vertical" && closeMenu()
       }}
-      href={menuItem.url}
+      // href={menuItem.url}
       sx={{ cursor: "pointer" }}
     >
       {menuItem.label}
