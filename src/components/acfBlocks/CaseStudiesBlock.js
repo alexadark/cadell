@@ -29,7 +29,8 @@ export const CaseStudiesBlock = ({ anchor, title, caseStudies, link }) => {
       sx={{
         position: "relative",
         px: [0, "30px !important"],
-        py: [50, 50, 100],
+        py: 25,
+        scrollMarginTop: 80,
         // height: ["auto", "auto", "100vh"],
         alignItems: "center",
         "&:nth-child(odd)": {
@@ -38,7 +39,7 @@ export const CaseStudiesBlock = ({ anchor, title, caseStudies, link }) => {
       }}
     >
       <Container sx={{ ...linkStyles }}>
-        <h3 sx={{ fontFamily: "body", mb: [20, 20, 100], ml: 35 }}>{title}</h3>
+        <h3 sx={{ fontFamily: "body", mb: [20, 20, 50], ml: 35 }}>{title}</h3>
         <Grid columns={[1, 1, 2]} gap={40} className="caseStudiesWrap">
           {caseStudies &&
             caseStudies.map((cs, i) => {

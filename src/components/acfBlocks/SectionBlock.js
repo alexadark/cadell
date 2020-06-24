@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react"
 import { graphql } from "gatsby"
 import Img from "../images/Image"
 import linkStyles from "../../styles/bottomLinkStyle"
-import { window, document, exists } from "browser-monads"
+import { window, exists } from "browser-monads"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
 export const fragment = graphql`
@@ -122,9 +122,10 @@ const style = {
   "&:nth-child(odd)": {
     bg: "light",
   },
+  scrollMarginTop: 80,
   // pt: 150,
   // pb: [50, 50, 0],
-  py: [50, 50, 100],
+  py: [50, 50, 25],
   px: [0, 50],
   // "&:first-of-type": {
   //   mt: -75,
@@ -152,7 +153,8 @@ const style = {
     fontSize: "xxs",
   },
   ".painting": {
-    transform: [0, "translateY(70px)"],
+    // transform: [0, "translateY(70px)"],
+    mt: [0, 70],
   },
   ".pic": {
     mb: 10,
