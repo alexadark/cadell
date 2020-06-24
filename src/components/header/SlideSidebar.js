@@ -42,6 +42,7 @@ const SlideSidebar = ({ ...props }) => {
           <Button
             icon={<Close />}
             a11yTitle="Close navigation menu"
+            focusIndicator={false}
             sx={{
               pointer: `cursor`,
               svg: {

@@ -123,9 +123,9 @@ export const globalStyles = theme => {
       }
     }
     *:focus {
-      outline-style: auto;
-      outline-width: 1px;
-      outline-color: ${theme.colors.focusOutline}!important;
+      outline-style: dashed;
+      outline-width: 0.5px;
+      outline-color: #ddd !important;
     }
 
   `

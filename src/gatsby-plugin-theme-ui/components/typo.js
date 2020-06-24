@@ -108,4 +108,9 @@ export const base = {
   h5,
   h6,
   blockquote,
+  // '*:focus' {
+  //   outlineStyle: 'dashed',
+  //   outlineWidth:1,
+  //   outlineColor: '#f5f5f5 !important'
+  // }
 }

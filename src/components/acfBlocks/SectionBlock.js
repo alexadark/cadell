@@ -77,7 +77,11 @@ export const SectionBlock = ({
       ref={sectionRef}
     >
       <Container>
-        <Grid columns={[1, 1, "1fr 1.3fr"]} gap={80} className="sectionWrap">
+        <Grid
+          columns={[1, 1, "1fr 1.3fr"]}
+          gap={[20, 80]}
+          className="sectionWrap"
+        >
           <div className="painting">
             <div className="paintingWrap">
               <div className="pic">
@@ -121,7 +125,7 @@ const style = {
   // pt: 150,
   // pb: [50, 50, 0],
   py: [50, 50, 100],
-  px: [20, 50],
+  px: [0, 50],
   // "&:first-of-type": {
   //   mt: -75,
   // },
@@ -148,7 +152,7 @@ const style = {
     fontSize: "xxs",
   },
   ".painting": {
-    transform: "translateY(70px)",
+    transform: [0, "translateY(70px)"],
   },
   ".pic": {
     mb: 10,
