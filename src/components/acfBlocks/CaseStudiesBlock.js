@@ -32,7 +32,7 @@ export const CaseStudiesBlock = ({ anchor, title, caseStudies, link }) => {
         py: [50, 50, 100],
         // height: ["auto", "auto", "100vh"],
         alignItems: "center",
-        "&:nth-child(even)": {
+        "&:nth-child(odd)": {
           bg: "light",
         },
       }}

@@ -89,10 +89,9 @@ const style = {
   zIndex: 10,
 
   variant: "transitions.m",
-  pt: 30,
-  pb: 10,
+  py: 30,
   "&.scrolled": {
-    py: 10,
+    py: [30, 10],
     // boxShadow: "small",
   },
 
