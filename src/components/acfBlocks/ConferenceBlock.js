@@ -28,6 +28,9 @@ export const ConferenceBlock = ({ anchor, conferences }) => {
   return (
     <section id={anchor || ""} className="management" sx={{ ...style }}>
       <Container sx={{ px: "30px !important" }}>
+        <h3 className="geReveal" sx={{ variant: "text.heading" }}>
+          Conferences
+        </h3>
         <Flex className="conferences">
           {conferences &&
             conferences.map((conf, i) => {

@@ -13,6 +13,9 @@ export const ArtistsBlock = ({ anchor, artists }) => {
   return (
     <section id={anchor || ""} className="artists" sx={{ ...style }}>
       <Container sx={{ px: "30px !important" }}>
+        <h3 className="geReveal" sx={{ variant: "text.heading" }}>
+          Artists
+        </h3>
         <h4 className="gsReveal">
           A selection of artists Cadell has advised on
         </h4>

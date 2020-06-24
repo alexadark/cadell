@@ -28,6 +28,9 @@ export const ManagementBlock = ({ anchor, info, members }) => {
   return (
     <section id={anchor || ""} className="management" sx={{ ...style }}>
       <Container sx={{ px: "30px !important" }}>
+        <h3 className="geReveal" sx={{ variant: "text.heading" }}>
+          Management
+        </h3>
         <Grid columns={[1, 1, 2]} gap={100}>
           {members &&
             members.map((member, i) => {

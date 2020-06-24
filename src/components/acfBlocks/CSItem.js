@@ -2,7 +2,7 @@
 import { jsx, Flex, Grid, Container } from "theme-ui"
 import React, { useState } from "react"
 import { Close } from "grommet-icons"
-import { Button } from "grommet"
+
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -37,7 +37,11 @@ const CSItem = ({ title, content, key, ...props }) => {
         >
           <Close />
         </div>
-        <h3 className="csTitle" sx={{ fontSize: 19, lineHeight: 1.5 }}>
+        <h3
+          className="csTitle"
+          onClick={openModal}
+          sx={{ fontSize: 19, lineHeight: 1.5 }}
+        >
           {title}
         </h3>
       </Flex>
@@ -93,6 +97,9 @@ const CSItem = ({ title, content, key, ...props }) => {
 export default CSItem
 
 const style = {
+  ".csTitle": {
+    cursor: "pointer",
+  },
   ".button": {
     pr: 20,
     cursor: "pointer",

@@ -115,7 +115,7 @@ export const SectionBlock = ({
 }
 
 const style = {
-  "&:nth-child(even)": {
+  "&:nth-child(odd)": {
     bg: "light",
   },
   // pt: 150,
@@ -123,7 +123,7 @@ const style = {
   py: [50, 50, 100],
   px: [20, 50],
   // "&:first-of-type": {
-  //   pt: 20,
+  //   mt: -75,
   // },
   ".sectionWrap": {
     minHeight: "100%",
@@ -150,6 +150,9 @@ const style = {
   ".painting": {},
   ".pic": {
     mb: 10,
+    img: {
+      // maxHeight: 500,
+    },
   },
   ".paintTitle,.painter,.status": {
     fontFamily: "body",
