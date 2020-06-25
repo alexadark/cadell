@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import { createLocalLink } from "../../utils"
 import { Collapse } from "../ui-components"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
@@ -34,13 +32,7 @@ const MENU_QUERY = graphql`
 `
 
 const renderLink = menuItem => {
-  return menuItem.connectedObject.__typename === "WpMenuItem" ? (
-    <AnchorLink to={menuItem.url}>{menuItem.label}</AnchorLink>
-  ) : createLocalLink(menuItem.url) ? (
-    <Link to={createLocalLink(menuItem.url)}>{menuItem.label}</Link>
-  ) : (
-    menuItem.label
-  )
+  return <AnchorLink to={menuItem.url}>{menuItem.label}</AnchorLink>
 }
 
 const renderMenuItem = menuItem => {
