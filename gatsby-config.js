@@ -14,6 +14,12 @@ module.exports = {
     "gatsby-plugin-sass",
     "@bumped-inc/gatsby-plugin-optional-chaining",
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -90,
+      },
+    },
+    {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
         url: `${wpUrl}/graphql`,
