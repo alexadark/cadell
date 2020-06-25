@@ -15,7 +15,7 @@ export const fragment = graphql`
         localFile {
           childImageSharp {
             fixed(toFormat: JPG, width: 145) {
-              ...GatsbyImageSharpFixed_tracedSVG
+              ...GatsbyImageSharpFixed_noBase64
             }
           }
         }

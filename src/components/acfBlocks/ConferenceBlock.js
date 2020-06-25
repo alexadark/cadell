@@ -15,7 +15,7 @@ export const fragment = graphql`
         localFile {
           childImageSharp {
             fluid(toFormat: JPG, maxWidth: 1000, maxHeight: 600) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
