@@ -31,17 +31,25 @@ const MENU_QUERY = graphql`
   }
 `
 
-const renderLink = menuItem => {
-  return <AnchorLink to={menuItem.url}>{menuItem.label}</AnchorLink>
+const renderLink = (menuItem, closeMenu) => {
+  // let close = closeMenu || ""
+  return (
+    <AnchorLink to={menuItem.url}>
+      <div
+        onClick={closeMenu}
+        dangerouslySetInnerHTML={{ __html: menuItem.label }}
+      />
+    </AnchorLink>
+  )
 }
 
-const renderMenuItem = menuItem => {
+const renderMenuItem = (menuItem, closeMenu) => {
   if (menuItem.childItems && menuItem.childItems.nodes.length) {
-    return renderSubMenu(menuItem)
+    return renderSubMenu(menuItem, closeMenu)
   } else {
     return (
       <li className="menu-item" key={menuItem.id}>
-        {renderLink(menuItem)}
+        {renderLink(menuItem, closeMenu)}
       </li>
     )
   }
@@ -54,25 +62,27 @@ const WithCollapse = ({ orientation, children, menuItem }) =>
     children
   )
 
-const renderSubMenu = (menuItem, orientation) => {
+const renderSubMenu = (menuItem, orientation, closeMenu) => {
   return (
     <li
       className="has-subMenu menu-item"
       key={menuItem.id}
       sx={{ position: "relative" }}
     >
-      {renderLink(menuItem)}
+      {renderLink(menuItem, closeMenu)}
 
       <WithCollapse orientation={orientation} menuItem={menuItem}>
         <ul className="menuItemGroup sub-menu">
-          {menuItem.childItems.nodes.map(item => renderMenuItem(item))}
+          {menuItem.childItems.nodes.map(item =>
+            renderMenuItem(item, closeMenu)
+          )}
         </ul>
       </WithCollapse>
     </li>
   )
 }
 
-const Menu = ({ orientation, ...props }) => {
+const Menu = ({ orientation, closeMenu, ...props }) => {
   const data = useStaticQuery(MENU_QUERY)
   const { menuItems } = data.wpMenu
 
@@ -82,9 +92,9 @@ const Menu = ({ orientation, ...props }) => {
       <ul role="menu">
         {menuItems.nodes.map(menuItem => {
           if (menuItem.childItems.nodes.length) {
-            return renderSubMenu(menuItem, orientation)
+            return renderSubMenu(menuItem, orientation, closeMenu)
           } else {
-            return renderMenuItem(menuItem)
+            return renderMenuItem(menuItem, closeMenu)
           }
         })}
       </ul>
