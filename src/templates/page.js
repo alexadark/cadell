@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Flex } from "theme-ui"
+import { jsx } from "theme-ui"
 import { useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"

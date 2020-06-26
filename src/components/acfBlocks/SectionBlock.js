@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 import Img from "../images/Image"
 import linkStyles from "../../styles/bottomLinkStyle"
 import { window, exists } from "browser-monads"
-import AnchorLink from "react-anchor-link-smooth-scroll"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 export const fragment = graphql`
   fragment sectionBlockFragment on WpPage_Flexlayouts_FlexibleLayouts_SectionBlock {
@@ -108,7 +108,7 @@ export const SectionBlock = ({
             {link && (
               <div className="bottomLink">
                 <div className="linkTitle">{linkTitle}</div>
-                <AnchorLink href={link.url}>{link.title}</AnchorLink>
+                <AnchorLink to={link.url}>{link.title}</AnchorLink>
               </div>
             )}
           </div>

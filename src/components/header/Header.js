@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Flex } from "theme-ui"
 import { useEffect, useRef } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Menu from "./Menu"
 import SlideSidebar from "./SlideSidebar"
 import SiteBranding from "./SiteBranding"
