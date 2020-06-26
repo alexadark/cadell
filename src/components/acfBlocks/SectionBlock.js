@@ -125,11 +125,11 @@ const style = {
   scrollMarginTop: 80,
   // pt: 150,
   // pb: [50, 50, 0],
-  py: [50, 50, 25],
+  py: [50, 50, 75],
   px: [0, 50],
-  // "&:first-of-type": {
-  //   mt: -75,
-  // },
+  "&:first-of-type": {
+    mt: -50,
+  },
   ".sectionWrap": {
     minHeight: "100%",
     // flexWrap: "wrap",
