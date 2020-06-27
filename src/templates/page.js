@@ -28,16 +28,20 @@ const Page = ({ data }) => {
     sections.forEach(section => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: section,
-          // start: "top-=10% top",
           start: "top top",
           end: "bottom top",
           scrub: 1,
-          // pin: section.querySelector(".painting"),
           toggleActions: "play reset play reset",
-          // markers: true,
           ease: "power4.out",
-          // pinSpacing: false,
+        },
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "50% top",
+          scrub: true,
+          pin: section.querySelector(".painting"),
+          // markers: true,
+          pinSpacing: false,
         },
       })
 
