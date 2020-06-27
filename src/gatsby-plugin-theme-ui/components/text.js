@@ -36,12 +36,10 @@ export const text = {
     },
   },
   heading: {
-    textTransform: "uppercase",
-    letterSpacing: 1.5,
     fontFamily: "body",
     mb: 50,
     // fontWeight: "bold",
-    fontSize: "l",
+    // fontSize: "l",
     // color: "black",
   },
 }

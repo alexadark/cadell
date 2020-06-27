@@ -28,7 +28,7 @@ export const ArtistsBlock = ({ anchor, artists }) => {
   )
 }
 const style = {
-  my: 150,
+  my: 100,
   h4: {
     fontFamily: "body",
     mb: 50,

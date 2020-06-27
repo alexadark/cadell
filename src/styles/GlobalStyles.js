@@ -23,8 +23,8 @@ export const globalStyles = theme => {
       margin: 0;
       max-width: 100%;
       overflow-x: hidden;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
+      /* scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch; */
     }
     body[style*='overflow'] {
       height: 100vh;
