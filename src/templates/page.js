@@ -31,8 +31,8 @@ const Page = ({ data }) => {
           trigger: section,
           // start: "top-=10% top",
           start: "top top",
-          end: "bottom 10%",
-          scrub: true,
+          end: "bottom top",
+          scrub: 1,
           // pin: section.querySelector(".painting"),
           toggleActions: "play reset play reset",
           // markers: true,
@@ -51,7 +51,7 @@ const Page = ({ data }) => {
       tl.fromTo(
         section.querySelector(".text"),
         { y: 0 },
-        { duration: 1, y: "-80%" }
+        { duration: 1, y: "-30%" }
       )
       tl.to(
         section.querySelector(".painting"),

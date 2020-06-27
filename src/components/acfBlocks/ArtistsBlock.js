@@ -28,7 +28,8 @@ export const ArtistsBlock = ({ anchor, artists }) => {
   )
 }
 const style = {
-  my: 100,
+  scrollMarginTop: 80,
+  py: 100,
   h4: {
     fontFamily: "body",
     mb: 50,

@@ -154,7 +154,7 @@ const style = {
   },
   ".painting": {
     // transform: [0, "translateY(70px)"],
-    mt: [0, 70],
+    mt: [0, 25],
   },
   ".pic": {
     mb: 10,

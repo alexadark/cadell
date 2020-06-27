@@ -29,7 +29,7 @@ export const ConferenceBlock = ({ anchor, conferences }) => {
     <section id={anchor || ""} className="management" sx={{ ...style }}>
       <Container sx={{ px: "30px !important" }}>
         <h3 className="geReveal" sx={{ variant: "text.heading" }}>
-          Conferences
+          Conference Speaking
         </h3>
         <Flex className="conferences">
           {conferences &&
@@ -65,6 +65,7 @@ export const ConferenceBlock = ({ anchor, conferences }) => {
 }
 
 const style = {
+  scrollMarginTop: 80,
   py: 100,
   bg: "light",
   ".conferences": {
