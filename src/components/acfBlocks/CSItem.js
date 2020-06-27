@@ -2,6 +2,8 @@
 import { jsx, Flex, Grid, Container } from "theme-ui"
 import React, { useState } from "react"
 import { Close } from "grommet-icons"
+import { Button } from "grommet"
+import { CaretPrevious } from "grommet-icons"
 
 import {
   disableBodyScroll,
@@ -81,10 +83,27 @@ const CSItem = ({ title, content, key, ...props }) => {
                     {title}
                   </h3>
                 </Flex>
-                <div
-                  className="csContent"
-                  dangerouslySetInnerHTML={{ __html: content }}
-                />
+                <div className="content">
+                  <div
+                    className="csContent"
+                    dangerouslySetInnerHTML={{ __html: content }}
+                  />
+                  <Button
+                    plain
+                    focusIndicator={false}
+                    icon={<CaretPrevious />}
+                    onClick={closeModal}
+                    label="Back"
+                    sx={{
+                      // color: "black",
+                      fontWeight: "bold",
+                      variant: "transitions.m",
+                      "&:hover": {
+                        transform: "translateX(-10px)",
+                      },
+                    }}
+                  />
+                </div>
               </Grid>
             </Container>
           </motion.div>
