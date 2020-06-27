@@ -38,21 +38,10 @@ const Page = ({ data }) => {
           // markers: true,
           ease: "power4.out",
           // pinSpacing: false,
-          // onEnter: () => gsap.to(".painting", { duration: 1, y: 0 }),
-
-          // onEnterBack: self =>
-          //   self.getVelocity() < -1200 &&
-          //   gsap.to(".text", { duration: 1, y: 0 }) &&
-          //   console.log("anim"),
         },
       })
 
-      // tl.to(section.querySelector(".painting"), { duration: 1, y: 0 })
-      tl.fromTo(
-        section.querySelector(".text"),
-        { y: 0 },
-        { duration: 1, y: "-30%" }
-      )
+      tl.to(section.querySelector(".text"), { duration: 1, y: "-30%" })
       tl.to(
         section.querySelector(".painting"),
         {
