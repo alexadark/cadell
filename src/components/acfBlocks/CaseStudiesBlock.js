@@ -29,7 +29,7 @@ export const CaseStudiesBlock = ({ anchor, title, caseStudies, link }) => {
       sx={{
         position: "relative",
         px: [0, "30px !important"],
-        py: 25,
+        py: 75,
         scrollMarginTop: 80,
         // height: ["auto", "auto", "100vh"],
         alignItems: "center",
