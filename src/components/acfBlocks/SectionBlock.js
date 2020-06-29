@@ -125,7 +125,7 @@ const style = {
   scrollMarginTop: 80,
   // pt: 150,
   // pb: [50, 50, 0],
-  py: [50, 50, 75],
+  py: [50, 50, 100],
   px: [0, 50],
   "&:first-of-type": {
     mt: -50,
