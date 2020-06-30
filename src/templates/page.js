@@ -182,7 +182,7 @@ const Page = ({ data }) => {
         y: "-60%",
         opacity: 0,
       },
-      "-=0.7"
+      "-=0.8"
     )
 
     //Buying
