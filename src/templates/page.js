@@ -12,7 +12,7 @@ import {
 } from "../components/acfBlocks"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { window, document, exists } from "browser-monads"
+import { window } from "browser-monads"
 
 const Page = ({ data }) => {
   useEffect(() => {
@@ -21,45 +21,235 @@ const Page = ({ data }) => {
       gsap.core.globals("ScrollTrigger", ScrollTrigger)
     }
 
-    const sections = exists(document)
-      ? document.querySelectorAll(".animSection")
-      : ""
+    // const sections = exists(document)
+    //   ? document.querySelectorAll(".animSection")
+    //   : ""
 
-    sections.forEach(section => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-          toggleActions: "play reset play reset",
-          ease: "power4.out",
-        },
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: "50% top",
-          scrub: true,
-          pin: section.querySelector(".painting"),
-          // markers: true,
-          pinSpacing: false,
-        },
-      })
+    // sections.forEach(section => {
+    //   const tl = gsap.timeline({
+    //     scrollTrigger: {
+    //       start: "top top",
+    //       end: "bottom top",
+    //       scrub: 1,
+    //       toggleActions: "play reset play reset",
+    //       ease: "power4.out",
+    //     },
+    //     scrollTrigger: {
+    //       trigger: section,
+    //       start: "top top",
+    //       end: "50% top",
+    //       scrub: true,
+    //       pin: section.querySelector(".painting"),
+    //       // markers: true,
+    //       pinSpacing: false,
+    //     },
+    //   })
 
-      tl.to(section.querySelector(".text"), { duration: 1, y: "-30%" })
-      tl.to(
-        section.querySelector(".painting"),
-        {
-          duration: 1,
-          y: "-50%",
-          opacity: 0,
-        },
-        "-=0.5"
-      )
+    //   tl.to(section.querySelector(".text"), { duration: 1, y: "-30%" })
+    //   tl.to(
+    //     section.querySelector(".painting"),
+    //     {
+    //       duration: 1,
+    //       y: "-50%",
+    //       opacity: 0,
+    //     },
+    //     "-=0.5"
+    //   )
+    // })
+
+    //Who we are
+
+    const wwaTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#whoWeAre",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        ease: "power4.out",
+      },
+      scrollTrigger: {
+        trigger: "#whoWeAre",
+        start: "top top",
+        end: "50% top",
+        scrub: true,
+        pin: "#whoWeAre .painting",
+        // markers: true,
+        pinSpacing: false,
+      },
     })
+
+    wwaTl.to("#whoWeAre .text", { duration: 1, y: "-30%" })
+    wwaTl.to(
+      "#whoWeAre .painting",
+      {
+        duration: 1,
+        y: "-60%",
+        opacity: 0,
+      },
+      "-=0.8"
+    )
+
+    //Independent
+
+    const indeTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#independent",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        ease: "power4.out",
+      },
+      scrollTrigger: {
+        trigger: "#independent",
+        start: "top top",
+        end: "50% top",
+        scrub: true,
+        pin: "#independent .painting",
+        // markers: true,
+        pinSpacing: false,
+      },
+    })
+
+    indeTl.to("#independent .text", { duration: 1, y: "-10%" })
+    indeTl.to(
+      "#independent .painting",
+      {
+        duration: 1,
+        y: "-80%",
+        opacity: 0,
+      },
+      "-=0.95"
+    )
+
+    //Selling
+
+    const sellingTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#sellingAdvice",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        ease: "power4.out",
+      },
+      scrollTrigger: {
+        trigger: "#sellingAdvice",
+        start: "top top",
+        end: "50% top",
+        scrub: true,
+        pin: "#sellingAdvice .painting",
+        // markers: true,
+        pinSpacing: false,
+      },
+    })
+
+    sellingTl.to("#sellingAdvice .text", { duration: 1, y: "-30%" })
+    sellingTl.to(
+      "#sellingAdvice .painting",
+      {
+        duration: 1,
+        y: "-50%",
+        opacity: 0,
+      },
+      "-=0.5"
+    )
+
+    //Strategy
+
+    const strategyTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#collectionStrategy",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        ease: "power4.out",
+      },
+      scrollTrigger: {
+        trigger: "#collectionStrategy",
+        start: "top top",
+        end: "50% top",
+        scrub: true,
+        pin: "#collectionStrategy .painting",
+        // markers: true,
+        pinSpacing: false,
+      },
+    })
+
+    strategyTl.to("#collectionStrategy .text", { duration: 1, y: "-30%" })
+    strategyTl.to(
+      "#collectionStrategy .painting",
+      {
+        duration: 1,
+        y: "-60%",
+        opacity: 0,
+      },
+      "-=0.7"
+    )
+
+    //Buying
+
+    const buyingTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#buyingAdvice",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        ease: "power4.out",
+      },
+      scrollTrigger: {
+        trigger: "#buyingAdvice",
+        start: "top top",
+        end: "50% top",
+        scrub: true,
+        pin: "#buyingAdvice .painting",
+        // markers: true,
+        pinSpacing: false,
+      },
+    })
+
+    buyingTl.to("#buyingAdvice .text", { duration: 1, y: "-30%" })
+    buyingTl.to(
+      "#buyingAdvice .painting",
+      {
+        duration: 1,
+        y: "-60%",
+        opacity: 0,
+      },
+      "-=0.7"
+    )
+
+    //Expertise
+
+    const expertiseTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#expertise",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        ease: "power4.out",
+      },
+      scrollTrigger: {
+        trigger: "#expertise",
+        start: "top top",
+        end: "50% top",
+        scrub: true,
+        pin: "#expertise .painting",
+        // markers: true,
+        pinSpacing: false,
+      },
+    })
+
+    expertiseTl.to("#expertise .text", { duration: 1, y: "-30%" })
+    expertiseTl.to(
+      "#expertise .painting",
+      {
+        duration: 1,
+        y: "-60%",
+        opacity: 0,
+      },
+      "-=0.6"
+    )
   }, [])
   const {
-    title,
-    content,
     flexLayouts: { flexibleLayouts },
   } = data.wpPage
   return (
