@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import { jsx, Grid, Container } from "theme-ui"
-import { useRef, useEffect } from "react"
 import { graphql } from "gatsby"
 import Img from "../images/Image"
 import linkStyles from "../../styles/bottomLinkStyle"
-import { window, exists } from "browser-monads"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 export const fragment = graphql`
@@ -53,28 +51,11 @@ export const SectionBlock = ({
   link,
   legalText,
 }) => {
-  const sectionRef = useRef()
-  useEffect(() => {
-    if (exists(window)) {
-      const addAnimClass = () =>
-        window.matchMedia("(min-width: 900px)").matches &&
-        sectionRef.current.classList.add("animSection")
-      // window.onResize = addAnimClass
-      window.addEventListener(
-        "resize",
-        window.matchMedia("(min-width: 900px)").matches
-          ? sectionRef.current.classList.add("animSection")
-          : sectionRef.current.classList.remove("animSection")
-      )
-    }
-  }, [])
-
   return (
     <section
       id={anchor || ""}
       className={`sectionBlock`}
       sx={{ ...style, ...linkStyles }}
-      ref={sectionRef}
     >
       <Container>
         <Grid
