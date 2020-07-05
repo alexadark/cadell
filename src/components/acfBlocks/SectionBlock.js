@@ -150,6 +150,9 @@ const style = {
     fontWeight: 400,
     color: "black",
   },
+  ".paintTitle": {
+    fontStyle: "italic",
+  },
   ".painter": {
     fontWeight: "bold",
     fontSize: 11,

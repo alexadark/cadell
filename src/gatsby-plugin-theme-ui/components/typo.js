@@ -93,7 +93,9 @@ export const blockquote = {
   fontSize: "l",
   lineHeight: 1.6,
   ml: 20,
-  py: 20,
+  pt: 30,
+  pb: 0,
+  mb: 10,
 }
 
 export const base = {
