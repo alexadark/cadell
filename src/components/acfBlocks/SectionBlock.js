@@ -71,7 +71,10 @@ export const SectionBlock = ({
               {/* <img src={image.publicURL} alt="" /> */}
               <h5 className="painter">{painter}</h5>
               <h5 className="paintTitle">{paintTitle}</h5>
-              <h5 className="status">{status}</h5>
+              <h5
+                className="status"
+                dangerouslySetInnerHTML={{ __html: status }}
+              />
             </div>
           </div>
           <div className="text">
