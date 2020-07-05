@@ -85,8 +85,10 @@ export const SectionBlock = ({
             />
             <div className="quote">
               <blockquote>"{quote}"</blockquote>
-              <div className="quoteAuthor">{quoteAuthor}</div>
-              <div className="authorRole">{authorRole}</div>
+              <div className="quoteAuthorRole">
+                <div className="quoteAuthor">{quoteAuthor}</div>
+                <div className="authorRole">{authorRole}</div>
+              </div>
             </div>
             {legalText && <div className="legalText">{legalText}</div>}
             {link && (
@@ -132,6 +134,7 @@ const style = {
       fontSize: 19,
     },
     ".quoteAuthor": { fontWeight: "bold" },
+    ".quoteAuthorRole": { ml: 20 },
   },
   ".legalText": {
     fontSize: "xxs",
