@@ -33,6 +33,7 @@ export const fragment = graphql`
       url
     }
     legalText
+    rights
   }
 `
 
@@ -50,6 +51,7 @@ export const SectionBlock = ({
   linkTitle,
   link,
   legalText,
+  rights,
 }) => {
   return (
     <section
@@ -75,6 +77,7 @@ export const SectionBlock = ({
                 className="status"
                 dangerouslySetInnerHTML={{ __html: status }}
               />
+              {rights && <div className="rights legalText">{rights}</div>}
             </div>
           </div>
           <div className="text">
@@ -138,6 +141,9 @@ const style = {
   },
   ".legalText": {
     fontSize: "xxs",
+    "&.rights": {
+      mt: [20, 20, 50],
+    },
   },
   ".painting": {
     // transform: [0, "translateY(70px)"],
