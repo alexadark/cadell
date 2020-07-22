@@ -13,6 +13,7 @@ import {
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { window } from "browser-monads"
+import SEO from "../components/seo/Seo"
 
 const Page = ({ data }) => {
   useEffect(() => {
@@ -217,6 +218,7 @@ const Page = ({ data }) => {
   } = data.wpPage
   return (
     <Layout>
+      <SEO title="Cadell" description="Art Risk Management" />
       {flexibleLayouts &&
         flexibleLayouts.length > 0 &&
         flexibleLayouts.map(block => {
