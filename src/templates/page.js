@@ -218,7 +218,10 @@ const Page = ({ data }) => {
   } = data.wpPage
   return (
     <Layout>
-      <SEO title="Cadell" description="Art Risk Management" />
+      <SEO
+        title="Cadell - Redefining Art Advisory "
+        description="Art Risk Management"
+      />
       {flexibleLayouts &&
         flexibleLayouts.length > 0 &&
         flexibleLayouts.map(block => {
