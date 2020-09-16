@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import Img from "gatsby-image"
 
-const Image = ({ img, ...props }) =>
+export const Image = ({ img, ...props }) =>
   img && img.localFile.childImageSharp ? (
     <Img
       fluid={img.localFile.childImageSharp.fluid}
@@ -12,5 +12,3 @@ const Image = ({ img, ...props }) =>
   ) : (
     <img src={img.localFile.publicURL} alt={img.altText} />
   )
-
-export default Image

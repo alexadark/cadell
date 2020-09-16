@@ -1,14 +1,17 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Container } from "theme-ui"
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
+import { PostEntry } from "../components/post"
 
-const Post = ({ data }) => {
-  const { content, featuredImage, title } = data.wpPost
+const Post = ({ data, context }) => {
+  const post = data.wpPost
   return (
     <Layout>
-      <h1>{title}</h1>
+      <Container sx={{ maxWidth: "l" }}>
+        <PostEntry post={post} ctx={context} location="single" />
+      </Container>
     </Layout>
   )
 }
