@@ -9,7 +9,9 @@ export const fragments = graphql`
     excerpt
     date
     featuredImage {
-      ...GatsbyImageQuery
+      node {
+        ...GatsbyImageQuery
+      }
     }
     categories {
       nodes {
@@ -19,15 +21,17 @@ export const fragments = graphql`
         uri
       }
     }
-    template {
-      ...PageTemplate
-    }
+    # template {
+    #   ...PageTemplate
+    # }
     author {
-      name
-      slug
-      uri
-      avatar {
-        url
+      node {
+        name
+        slug
+        uri
+        avatar {
+          url
+        }
       }
     }
     tags {
@@ -38,11 +42,11 @@ export const fragments = graphql`
       }
     }
   }
-  fragment PageTemplate on WpContentTemplateUnion {
-    ... on WpDefaultTemplate {
-      templateName
-    }
-  }
+  #   fragment PageTemplate on WpContentTemplateUnion {
+  #     ... on WpDefaultTemplate {
+  #       templateName
+  #     }
+  #   }
   fragment GatsbyImageQuery on WpMediaItem {
     altText
     sourceUrl

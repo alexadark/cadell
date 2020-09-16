@@ -10,9 +10,9 @@ const MENU_QUERY = graphql`
     label
     url
     target
-    connectedObject {
-      __typename
-    }
+    # connectedObject {
+    #   __typename
+    # }
   }
 
   query GET_MENU_ITEMS {
