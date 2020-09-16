@@ -7,6 +7,7 @@ module.exports = {
     title: `cadell`,
     description: `redefining <span>Art Advisory</span>`,
     author: `@alexadark`,
+    siteUrl:`https://cadellco.com/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
