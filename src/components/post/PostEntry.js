@@ -10,7 +10,7 @@ import {
   PrevNextPostNavigation,
 } from "./index"
 import normalize from "normalize-path"
-// import { SocialShare } from '../social'
+import { SocialShare } from '../social'
 
 export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? "no-img" : ""
@@ -42,11 +42,11 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
 
         {location === "single" && (
           <>
-            {/* <SocialShare
+            <SocialShare
               url={normalize(`/${post.uri}`)}
               title={post.title}
               media={media}
-            /> */}
+            />
             <PrevNextPostNavigation ctx={ctx} />
           </>
         )}
