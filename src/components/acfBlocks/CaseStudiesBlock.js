@@ -10,8 +10,10 @@ export const fragment = graphql`
     anchor
     title
     caseStudies {
-      title
-      content
+      ... on WpPost {
+        title
+        content
+      }
     }
 
     link {
