@@ -6,8 +6,8 @@ import {
   PostEntryTitle,
   PostEntryMedia,
   PostEntryContent,
-  //   PostEntryInfo,
-  //   PrevNextPostNavigation,
+  PostEntryInfo,
+  PrevNextPostNavigation,
 } from "./index"
 import normalize from "normalize-path"
 // import { SocialShare } from '../social'
@@ -15,7 +15,7 @@ import normalize from "normalize-path"
 export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? "no-img" : ""
   const media = post.featuredImage
-    ? post.featuredImage.node.localFile.childImageSharp.fluid.src
+    ? post.featuredImage.localFile.childImageSharp.fluid.src
     : null
   return (
     <article
@@ -36,7 +36,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
           post={post}
           className="entry-title"
         />
-        {/* <PostEntryInfo className="entry-info" post={post} /> */}
+        <PostEntryInfo className="entry-info" post={post} />
 
         <PostEntryContent location={location} post={post} />
 
@@ -47,7 +47,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
               title={post.title}
               media={media}
             /> */}
-            {/* <PrevNextPostNavigation ctx={ctx} /> */}
+            <PrevNextPostNavigation ctx={ctx} />
           </>
         )}
       </div>

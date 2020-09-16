@@ -5,12 +5,12 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { PostEntry } from "../components/post"
 
-const Post = ({ data, context }) => {
+const Post = ({ data, pageContext }) => {
   const post = data.wpPost
   return (
     <Layout>
       <Container sx={{ maxWidth: "l" }}>
-        <PostEntry post={post} ctx={context} location="single" />
+        <PostEntry post={post} ctx={pageContext} location="single" />
       </Container>
     </Layout>
   )
