@@ -20,6 +20,7 @@ export default {
     s: 300,
     m: 600,
     l: 900,
+    xl: 1200
   },
   shadows: {
     small: `0px 1px 10px rgba(0,0,0,0.05)`,
