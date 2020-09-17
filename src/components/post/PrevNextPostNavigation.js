@@ -29,9 +29,10 @@ const renderNextLink = ({ next }) => {
   }
 }
 
-export const PrevNextPostNavigation = ({ ctx, style }) => {
+export const PrevNextPostNavigation = ({ ctx }) => {
   return (
-    <nav sx={{ ...style }}>
+    <nav sx={{ display:'flex',
+    justifyContent: 'space-between' }}>
       {renderPreviousLink(ctx)}
       {renderNextLink(ctx)}
     </nav>

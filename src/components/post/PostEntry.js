@@ -11,6 +11,7 @@ import {
 } from "./index"
 import normalize from "normalize-path"
 import { SocialShare } from '../social'
+import { postStyles } from "../../styles";
 
 export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? "no-img" : ""
@@ -21,9 +22,12 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
     <article
       className="entry"
       sx={{
+        ...postStyles,
+        mt:[0,40,60],
         ".entry-content": {
           pb: `m`,
           borderBottom: t => `1px solid ${t.colors.border}`,
+
         },
       }}
       {...props}

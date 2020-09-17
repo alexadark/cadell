@@ -18,7 +18,7 @@ export const ArchiveContent = ({ posts, ctx, name }) => {
 
   return (
     <Container
-      sx={{ ...containerStyles, maxWidth: 'xl'}}
+      sx={{ ...containerStyles, maxWidth: 'xl', mt:[0,40,60]}}
       className="mainContainer"
     >
       <Flex

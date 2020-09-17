@@ -8,7 +8,7 @@ import { FiShare2 } from 'react-icons/fi'
 export const SocialShare = ({ url, title, media }) => {
   return (
     <>
-      <span
+      {/* <span
         sx={{
           ...socialStyles.share.icon,
           mt: `m`,
@@ -16,7 +16,7 @@ export const SocialShare = ({ url, title, media }) => {
         }}
       >
         <FiShare2 />
-      </span>
+      </span> */}
 
       <div
         sx={{
