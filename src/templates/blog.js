@@ -2,15 +2,15 @@
 import { jsx } from "theme-ui"
 import React from "react"
 import Layout from "../components/Layout"
+import { ArchiveContent } from "../components/archive"
 
-const Blog = ({ data }) => {
+const Blog = ({ data, pageContext }) => {
   const posts = data.allWpPost.nodes
+  // console.log('posts'. posts);
+
   return (
     <Layout>
-      {posts &&
-        posts.map(post => {
-          return <h1>{post.title}</h1>
-        })}
+      <ArchiveContent posts={posts} ctx={pageContext} />
     </Layout>
   )
 }
