@@ -23,10 +23,12 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
       className="entry"
       sx={{
         ...postStyles,
-        mt:[0,40,60],
+        // mt:[0,40,60],
         ".entry-content": {
           pb: `m`,
-          borderBottom: t => `1px solid ${t.colors.border}`,
+          borderBottom: `1px solid #ddd`,
+          mb: `l`
+
 
         },
       }}
@@ -39,6 +41,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
           location={location}
           post={post}
           className="entry-title"
+
         />
         <PostEntryInfo className="entry-info" post={post} />
 

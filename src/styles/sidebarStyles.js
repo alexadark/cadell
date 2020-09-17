@@ -3,7 +3,6 @@ export const sidebarStyles = {
   borderRadius: 's',
   height: 'auto',
   px: ['m', 'xl', 'xl', 'm'],
-  py: 'm',
-  boxShadow: 'small',
+  // py: 'm',
   mb: 'xl',
 }

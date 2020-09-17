@@ -25,6 +25,7 @@ export const ArchiveContent = ({ posts, ctx, name }) => {
         sx={{
           flexWrap: [`wrap`, `wrap`, `wrap`, `nowrap`],
           alignItems: `flex-start`,
+          '.posts-list': { pr: [0, 0, 0, 30]}
         }}
       >
         <PostsList posts={posts} />

@@ -136,6 +136,8 @@ export const widgetStyles = {
       border: 'none',
       bg: 'nlInputBg',
       color: 'nlInputColor',
+      border: '1px solid #ddd',
+      borderRight: 'none'
     },
     button: {
       border: 'none',

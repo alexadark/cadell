@@ -9,7 +9,7 @@ export const Sidebar = ({ ...props }) => {
   return (
     <>
       <Box className="sidebar" sx={sidebarStyles} {...props}>
-        <Box sx={{ my: `l` }}>
+        <Box >
           <RecentPosts />
           <Newsletter />
         </Box>
