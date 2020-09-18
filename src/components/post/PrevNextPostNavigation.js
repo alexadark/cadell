@@ -21,7 +21,7 @@ const renderNextLink = ({ next }) => {
   if (next) {
     return (
       <Link className="right" to={`${next}`} sx={{}}>
-        <span>Up Next</span>
+        <span>Next</span>
       </Link>
     )
   } else {
@@ -31,8 +31,7 @@ const renderNextLink = ({ next }) => {
 
 export const PrevNextPostNavigation = ({ ctx }) => {
   return (
-    <nav sx={{ display:'flex',
-    justifyContent: 'space-between' }}>
+    <nav sx={{ display: "flex", justifyContent: "space-between" }}>
       {renderPreviousLink(ctx)}
       {renderNextLink(ctx)}
     </nav>

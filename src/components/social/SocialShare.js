@@ -1,9 +1,10 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Flex } from "theme-ui"
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
-import { Twitter, Facebook, Linkedin } from './icons'
-import { FiShare2 } from 'react-icons/fi'
+import React from "react"
+import { Twitter, Facebook, Linkedin } from "./icons"
+import { FiShare2 } from "react-icons/fi"
+import { Underline } from "grommet-icons"
 
 export const SocialShare = ({ url, title, media }) => {
   return (
@@ -17,6 +18,24 @@ export const SocialShare = ({ url, title, media }) => {
       >
         <FiShare2 />
       </span> */}
+      <Flex
+        sx={{
+          mb: 20,
+          justifyContent: "center",
+        }}
+      >
+        <span
+          sx={{
+            fontWeight: "bold",
+            borderBottom: "1px solid #ddd",
+            width: 100,
+            textAlign: "center",
+            pb: 10,
+          }}
+        >
+          Share
+        </span>
+      </Flex>
 
       <div
         sx={{
@@ -31,65 +50,62 @@ export const SocialShare = ({ url, title, media }) => {
         <Facebook url={url} quote={title}>
           Facebook
         </Facebook>
-        /
-        <Linkedin url={url}>
-          Linkedin
-        </Linkedin>
+        /<Linkedin url={url}>Linkedin</Linkedin>
       </div>
     </>
   )
 }
 
- const socialStyles = {
+const socialStyles = {
   follow: {
-    justifyContent: 'center',
-    color: 'text',
-    '.inverse &': {
-      color: 'textInverse',
+    justifyContent: "center",
+    color: "text",
+    ".inverse &": {
+      color: "textInverse",
     },
 
     a: {
-      color: 'text',
-      '.inverse &': {
-        color: 'textInverse',
+      color: "text",
+      ".inverse &": {
+        color: "textInverse",
       },
 
-      p: 'xxs',
+      p: "xxs",
       mx: 4,
-      transition: '.6s',
-      '&:hover': { opacity: 0.6 },
+      transition: ".6s",
+      "&:hover": { opacity: 0.6 },
     },
     svg: {
-      width: '18px',
-      height: '18px',
+      width: "18px",
+      height: "18px",
     },
   },
   share: {
     icon: {
-      border: '1px solid',
-      borderColor: 'text',
-      display: 'flex',
-      width: '1.5rem',
-      height: '1.5rem',
-      mx: 'auto',
-      alignItems: 'center',
-      justifyContent: 'center',
+      border: "1px solid",
+      borderColor: "text",
+      display: "flex",
+      width: "1.5rem",
+      height: "1.5rem",
+      mx: "auto",
+      alignItems: "center",
+      justifyContent: "center",
       // bg: 'primary',
 
-      borderRadius: '50%',
+      borderRadius: "50%",
       svg: {
-        color: 'text',
+        color: "text",
       },
     },
     name: {
-      variant: 'text.special',
-      fontWeight: 'bold',
-      display: 'flex',
-      justifyContent: 'center',
-      '&>*': {
-        variant: 'special.link',
+      variant: "text.special",
+      fontWeight: "bold",
+      display: "flex",
+      justifyContent: "center",
+      "&>*": {
+        variant: "special.link",
         mx: 4,
-        cursor: 'pointer',
+        cursor: "pointer",
       },
     },
   },
