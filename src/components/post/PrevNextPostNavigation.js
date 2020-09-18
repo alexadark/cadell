@@ -31,7 +31,7 @@ const renderNextLink = ({ next }) => {
 
 export const PrevNextPostNavigation = ({ ctx }) => {
   return (
-    <nav sx={{ display: "flex", justifyContent: "space-between" }}>
+    <nav sx={{ display: "flex", justifyContent: "space-between", mb: 40 }}>
       {renderPreviousLink(ctx)}
       {renderNextLink(ctx)}
     </nav>

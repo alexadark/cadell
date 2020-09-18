@@ -10,8 +10,8 @@ import {
   PrevNextPostNavigation,
 } from "./index"
 import normalize from "normalize-path"
-import { SocialShare } from '../social'
-import { postStyles } from "../../styles";
+import { SocialShare } from "../social"
+import { postStyles } from "../../styles"
 
 export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? "no-img" : ""
@@ -23,13 +23,11 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
       className="entry"
       sx={{
         ...postStyles,
-        // mt:[0,40,60],
+        mt: location === "single" && [0, 40, 60],
         ".entry-content": {
           pb: `m`,
           borderBottom: `1px solid #ddd`,
-          mb: `l`
-
-
+          mb: `l`,
         },
       }}
       {...props}
@@ -41,7 +39,6 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
           location={location}
           post={post}
           className="entry-title"
-
         />
         <PostEntryInfo className="entry-info" post={post} />
 

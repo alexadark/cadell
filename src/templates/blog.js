@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { ArchiveContent } from "../components/archive"
 
