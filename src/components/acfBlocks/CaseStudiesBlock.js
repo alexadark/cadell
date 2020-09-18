@@ -13,6 +13,7 @@ export const fragment = graphql`
       ... on WpPost {
         title
         content
+        uri
       }
     }
 
@@ -51,6 +52,7 @@ export const CaseStudiesBlock = ({ anchor, title, caseStudies, link }) => {
                   key={i}
                   title={cs.title}
                   content={cs.content}
+                  uri={cs.uri}
                 />
               )
             })}

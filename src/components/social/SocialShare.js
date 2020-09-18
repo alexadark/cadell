@@ -6,23 +6,15 @@ import { Twitter, Facebook, Linkedin } from "./icons"
 import { FiShare2 } from "react-icons/fi"
 import { Underline } from "grommet-icons"
 
-export const SocialShare = ({ url, title, media }) => {
+export const SocialShare = ({ url, title, media, ...props }) => {
   return (
     <>
-      {/* <span
-        sx={{
-          ...socialStyles.share.icon,
-          mt: `m`,
-          mb: `xs`,
-        }}
-      >
-        <FiShare2 />
-      </span> */}
       <Flex
         sx={{
           mb: 20,
           justifyContent: "center",
         }}
+        {...props}
       >
         <span
           sx={{

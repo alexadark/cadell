@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import { Close } from "grommet-icons"
 import { Button } from "grommet"
 import { CaretPrevious } from "grommet-icons"
+import { SocialShare } from "../social"
 
 import {
   disableBodyScroll,
@@ -12,7 +13,7 @@ import {
 } from "body-scroll-lock"
 import { motion, AnimatePresence } from "framer-motion"
 
-const CSItem = ({ title, content, key, ...props }) => {
+const CSItem = ({ title, content, uri, key, ...props }) => {
   const [isOpen, setIsOpen] = useState(false)
   const closeModal = () => {
     setIsOpen(false)
@@ -105,6 +106,7 @@ const CSItem = ({ title, content, key, ...props }) => {
                   />
                 </div>
               </Grid>
+              <SocialShare url={uri} title={title} sx={{ mt: 40 }} />
             </Container>
           </motion.div>
         )}
