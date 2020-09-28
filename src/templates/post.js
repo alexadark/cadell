@@ -4,11 +4,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { PostEntry } from "../components/post"
+import SEO from "../components/seo/Seo"
 
 const Post = ({ data, pageContext }) => {
   const post = data.wpPost
   return (
     <Layout>
+      <SEO title={post.title} />
       <Container sx={{ maxWidth: "l" }}>
         <PostEntry post={post} ctx={pageContext} location="single" />
       </Container>
