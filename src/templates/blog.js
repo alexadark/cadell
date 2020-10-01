@@ -4,6 +4,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { ArchiveContent } from "../components/archive"
+import SEO from "../components/seo/Seo"
 
 const Blog = ({ data, pageContext }) => {
   const posts = data.allWpPost.nodes
@@ -11,6 +12,7 @@ const Blog = ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <SEO title="Cadellco Blog" />
       <ArchiveContent posts={posts} ctx={pageContext} />
     </Layout>
   )
