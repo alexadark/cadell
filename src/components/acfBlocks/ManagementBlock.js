@@ -38,7 +38,7 @@ export const ManagementBlock = ({ anchor, info, members }) => {
               return (
                 <div key={i} className="member">
                   <Img
-                    fixed={image.localFile.childImageSharp.fixed}
+                    fixed={image?.localFile?.childImageSharp?.fixed}
                     alt={name}
                     className="gsReveal"
                   />

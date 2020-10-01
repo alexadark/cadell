@@ -16,7 +16,7 @@ import { postStyles } from "../../styles"
 export const PostEntry = ({ post, ctx, location, ...props }) => {
   const noImgClass = !post.featuredImage ? "no-img" : ""
   const media = post.featuredImage
-    ? post.featuredImage.localFile.childImageSharp.fluid.src
+    ? post?.featuredImage?.localFile?.childImageSharp?.fluid?.src
     : null
   return (
     <article

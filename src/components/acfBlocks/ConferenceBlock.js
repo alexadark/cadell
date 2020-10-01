@@ -40,7 +40,7 @@ export const ConferenceBlock = ({ anchor, conferences }) => {
                   <div className="conf">
                     <Img
                       className="gsReveal"
-                      fluid={image.localFile.childImageSharp.fluid}
+                      fluid={image?.localFile?.childImageSharp?.fluid}
                     />
                     <div className="subtitle gsReveal">{subtitle}</div>
                     <div
