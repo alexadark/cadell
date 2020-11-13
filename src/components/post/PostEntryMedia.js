@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, AspectRatio } from "theme-ui"
 // eslint-disable-next-line no-unused-vars
 import React from "react"
 import { Link } from "gatsby"
@@ -16,14 +16,23 @@ const WithLink = ({ post, location, children }) =>
 
 export const PostEntryMedia = ({ post, location, ...props }) => {
   const img = post.featuredImage
+  const isCaseStudy = post.categories.nodes
+    .map(cat => cat.slug)
+    .includes("case-studies")
 
   return (
     <>
       {img && (
         <WithLink location={location} post={post}>
-          <div className="entry-media" {...props}>
-            <Image img={img} />
-          </div>
+          {isCaseStudy ? (
+            <AspectRatio className="entry-media" ratio={12 / 3}>
+              <Image img={img} />
+            </AspectRatio>
+          ) : (
+            <div className="entry-media" {...props}>
+              <Image img={img} />
+            </div>
+          )}
         </WithLink>
       )}
     </>

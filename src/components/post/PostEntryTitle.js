@@ -1,15 +1,15 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Styled } from "theme-ui"
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react"
+import { Link } from "gatsby"
 
 export const PostEntryTitle = ({ post, location, ...props }) => {
   const { title, uri } = post
 
   return (
     <>
-      {location === 'single' ? (
+      {location === "single" ? (
         <h1
           className="entry-title"
           dangerouslySetInnerHTML={{ __html: title }}
@@ -24,3 +24,5 @@ export const PostEntryTitle = ({ post, location, ...props }) => {
     </>
   )
 }
+
+const style = {}
