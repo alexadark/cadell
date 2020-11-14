@@ -62,8 +62,9 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
               },
               ".caseStudy &": {
                 position: "absolute",
-                top: "5%",
-                left: 50,
+                top: [0, "1%", "5%"],
+                fontSize: [14, 20, 36],
+                left: [10, 25, 50],
                 color: "black",
                 textShadow: "4px 4px 15px rgba(0, 0, 0, .8)",
                 a: {
