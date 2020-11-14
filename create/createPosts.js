@@ -50,4 +50,17 @@ module.exports = async ({ actions, graphql }) => {
     items: posts,
     itemsPerPage: 10,
   })
+
+  //Share image
+  posts.map(post => {
+    if (process.env.gatsby_executing_command.includes("develop")) {
+      createPage({
+        path: `${post.node.uri}share-img`,
+        component: path.resolve("./src/templates/postShareImg.js"),
+        context: {
+          uri: post.node.uri,
+        },
+      })
+    }
+  })
 }
