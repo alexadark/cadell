@@ -8,9 +8,14 @@ import SEO from "../components/seo/Seo"
 
 const Post = ({ data, pageContext }) => {
   const post = data.wpPost
+  const { postShareImage, featuredImage } = post
+  const shareImage = postShareImage?.shareImage
+    ? postShareImage.shareimage.localFile.publicURL
+    : featuredImage?.localFile?.publicURL
+
   return (
     <Layout>
-      <SEO title={post.title} />
+      <SEO title={post.title} shareImage={shareImage} />
       <Container sx={{ maxWidth: "l" }}>
         <PostEntry post={post} ctx={pageContext} location="single" />
       </Container>

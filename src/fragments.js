@@ -12,6 +12,13 @@ export const fragments = graphql`
     featuredImage {
       ...GatsbyImageQuery
     }
+    postShareImage {
+      shareimage {
+        localFile {
+          publicURL
+        }
+      }
+    }
     categories {
       nodes {
         id
@@ -48,6 +55,7 @@ export const fragments = graphql`
     altText
     sourceUrl
     localFile {
+      publicURL
       childImageSharp {
         fluid(maxWidth: 1200, quality: 80) {
           ...GatsbyImageSharpFluid_tracedSVG
