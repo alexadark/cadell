@@ -9,9 +9,12 @@ import SEO from "../components/seo/Seo"
 const Post = ({ data, pageContext }) => {
   const post = data.wpPost
   const { postShareImage, featuredImage } = post
-  const shareImage = postShareImage?.shareImage
+  const shareImage = postShareImage?.shareimage
     ? postShareImage.shareimage.localFile.publicURL
     : featuredImage?.localFile?.publicURL
+
+  // const shareImage = postShareImage?.shareImage?.localFile?.publicURL
+  console.log("share", shareImage)
 
   return (
     <Layout>
