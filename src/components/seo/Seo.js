@@ -4,7 +4,7 @@ import { useSiteMetaData } from "../../hooks"
 
 const SEO = ({
   title = "cadell",
-  description = "Redfining Art Advisory",
+  description = "Redefining Art Advisory",
   shareImage,
 }) => {
   const { siteUrl } = useSiteMetaData()
