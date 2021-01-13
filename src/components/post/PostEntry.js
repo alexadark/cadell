@@ -18,9 +18,10 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
   const media = post.featuredImage
     ? post?.featuredImage?.localFile?.childImageSharp?.fluid?.src
     : null
-  const isCaseStudy = post.categories.nodes
-    .map(cat => cat.slug)
-    .includes("case-studies")
+  const { caseStudyFormat } = post.postFormat
+  const isCaseStudy =
+    post.categories.nodes.map(cat => cat.slug).includes("case-studies") ||
+    caseStudyFormat
   const isLightTitle = post.featuredImage.altText !== "darkTitle"
 
   return (

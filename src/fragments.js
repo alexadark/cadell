@@ -8,6 +8,9 @@ export const fragments = graphql`
     title
     excerpt
     date
+    postFormat {
+      caseStudyFormat
+    }
 
     featuredImage {
       ...GatsbyImageQuery

@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Container } from "theme-ui"
-import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { PostEntry } from "../components/post"
