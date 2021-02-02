@@ -225,7 +225,7 @@ const Page = ({ data }) => {
         description="Art Risk Management"
       />
       {content && (
-        <Container sx={{ pt: 40 }}>
+        <Container sx={{ py: 40 }}>
           <div
             dangerouslySetInnerHTML={{ __html: content }}
             className={slug}

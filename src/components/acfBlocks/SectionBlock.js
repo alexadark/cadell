@@ -181,4 +181,20 @@ const style = {
       width: ["100%", "100%", "65%"],
     },
   },
+  "&#whoWeAre": {
+    ".legalText": {
+      position: "relative",
+
+      "&:after": {
+        content: "''",
+        backgroundImage: "url(/step.jpg)",
+        width: 400,
+        height: 100,
+        position: "absolute",
+        top: 60,
+        right: ["initial", "initial", 0],
+        left: [0, 0, "initial"],
+      },
+    },
+  },
 }
