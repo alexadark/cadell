@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Container } from "theme-ui"
 import { useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
@@ -215,6 +215,8 @@ const Page = ({ data }) => {
   }, [])
   const {
     flexLayouts: { flexibleLayouts },
+    content,
+    slug,
   } = data.wpPage
   return (
     <Layout>
@@ -222,6 +224,21 @@ const Page = ({ data }) => {
         title="Cadell - Redefining Art Advisory "
         description="Art Risk Management"
       />
+      {content && (
+        <Container sx={{ pt: 40 }}>
+          <div
+            dangerouslySetInnerHTML={{ __html: content }}
+            className={slug}
+            sx={{
+              px: 30,
+              "&.data-privacy-notice": {
+                columnCount: [1, 1, 2, 3],
+                columnGap: 40,
+              },
+            }}
+          />
+        </Container>
+      )}
       {flexibleLayouts &&
         flexibleLayouts.length > 0 &&
         flexibleLayouts.map(block => {
@@ -252,6 +269,7 @@ export const pageQuery = graphql`
     wpPage(uri: { eq: $uri }) {
       content
       title
+      slug
       flexLayouts {
         flexibleLayouts {
           __typename
