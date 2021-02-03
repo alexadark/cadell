@@ -235,6 +235,20 @@ const Page = ({ data }) => {
                 columnCount: [1, 1, 2, 3],
                 columnGap: 40,
               },
+              "&.industry-recognition": {
+                pt: "20%",
+                width: "100%",
+                // height: "100%",
+                ">div": {
+                  display: "flex",
+                  flexWrap: "wrap",
+                  flexDirection: ["column", "row"],
+                  justifyContent: "space-between",
+                  // div: {
+                  //   minWidth: 350,
+                  // },
+                },
+              },
             }}
           />
         </Container>
