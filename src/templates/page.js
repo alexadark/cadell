@@ -243,10 +243,11 @@ const Page = ({ data }) => {
                   display: "flex",
                   flexWrap: "wrap",
                   flexDirection: ["column", "row"],
-                  justifyContent: "space-between",
-                  // div: {
-                  //   minWidth: 350,
-                  // },
+                  justifyContent: "center",
+                  ".gatsby-image-wrapper": {
+                    mb: 20,
+                    mx: 10,
+                  },
                 },
               },
             }}
