@@ -52,6 +52,17 @@ export const ManagementBlock = ({ anchor, info, members }) => {
               )
             })}
         </Grid>
+        <Grid
+          className="recognition gsReveal"
+          columns={[1, 2, 4]}
+          gap={20}
+          sx={{ my: [50, 70, 100] }}
+        >
+          <img src="/step.jpg" alt="" />
+          <img src="/step-16-17.png" alt="" />
+          <img src="/step17-18.png" alt="" />
+          <img src="/spears.png" alt="" />
+        </Grid>
         <div
           className="info gsReveal"
           dangerouslySetInnerHTML={{ __html: info }}
@@ -81,6 +92,6 @@ const style = {
     },
   },
   ".info": {
-    mt: 100,
+    // mt: 100,
   },
 }
