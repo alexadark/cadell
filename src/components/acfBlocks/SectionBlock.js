@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Grid, Container } from "theme-ui"
+import { jsx, Grid, Container, Flex } from "theme-ui"
 import { graphql } from "gatsby"
 import Img from "../images/Image"
 import linkStyles from "../../styles/bottomLinkStyle"
@@ -94,6 +94,15 @@ export const SectionBlock = ({
               </div>
             </div>
             {legalText && <div className="legalText">{legalText}</div>}
+            {anchor === "whoWeAre" && (
+              <Flex sx={{ justifyContent: ["center", "flex-end"] }}>
+                <img
+                  className="step"
+                  sx={{ width: 320, height: 80, top: 10, position: "relative" }}
+                  src="/step.jpg"
+                />
+              </Flex>
+            )}
             {link && (
               <div className="bottomLink">
                 <div className="linkTitle">{linkTitle}</div>
@@ -181,23 +190,23 @@ const style = {
       width: ["100%", "100%", "65%"],
     },
   },
-  "&#whoWeAre": {
-    ".legalText": {
-      position: "relative",
+  // "&#whoWeAre": {
+  //   ".legalText": {
+  //     position: "relative",
 
-      "&:after": {
-        content: "''",
-        backgroundImage: "url(/step.jpg)",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: ["80%", "100%"],
-        width: [320],
-        height: [80],
-        position: "absolute",
-        top: [80, 60],
-        pb: 20,
-        right: ["initial", "initial", 0],
-        left: [0, 0, "initial"],
-      },
-    },
-  },
+  //     "&:after": {
+  //       content: "''",
+  //       backgroundImage: "url(/step.jpg)",
+  //       backgroundRepeat: ["no-repeat", "no-repeat"],
+  //       backgroundSize: ["80%", "100%"],
+  //       width: [320],
+  //       height: [80],
+  //       position: "absolute",
+  //       top: [80, 60],
+  //       pb: 20,
+  //       right: ["initial", "initial", 0],
+  //       left: [0, 0, "initial"],
+  //     },
+  //   },
+  // },
 }
