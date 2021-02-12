@@ -22,7 +22,7 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
   const isCaseStudy =
     post.categories.nodes.map(cat => cat.slug).includes("case-studies") ||
     caseStudyFormat
-  const isLightTitle = post.featuredImage.altText !== "darkTitle"
+  const isLightTitle = isCaseStudy && post.featuredImage.altText !== "darkTitle"
 
   return (
     <article
