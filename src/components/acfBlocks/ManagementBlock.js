@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Grid, Container } from "theme-ui"
+import { jsx, Grid, Container, Flex, Box } from "theme-ui"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -43,11 +43,32 @@ export const ManagementBlock = ({ anchor, info, members }) => {
                     className="gsReveal"
                   />
                   <h4 className="name gsReveal">{name}</h4>
-                  <p className="content gsReveal">{content}</p>
-
-                  <a className="mail gsReveal" href={`mailto:${email}`}>
-                    Email - {email}
-                  </a>
+                  <p
+                    className="content gsReveal"
+                    sx={name.toLowerCase() !== "richard" && { mb: 50 }}
+                  >
+                    {content}
+                  </p>
+                  <Box
+                    sx={{
+                      position: "relative",
+                    }}
+                  >
+                    <a className="mail gsReveal" href={`mailto:${email}`}>
+                      Email - {email}
+                    </a>
+                    {name.toLowerCase().includes("richard") && (
+                      <img
+                        src="/private-client.png"
+                        sx={{
+                          maxWidth: "18%",
+                          position: "absolute",
+                          right: 0,
+                          top: [-20, -50],
+                        }}
+                      />
+                    )}
+                  </Box>
                 </div>
               )
             })}
@@ -81,9 +102,7 @@ const style = {
     color: "black",
     mt: 10,
   },
-  ".content": {
-    mb: 50,
-  },
+  ".content": {},
   ".mail": {
     color: "purple",
     fontSize: "s",
