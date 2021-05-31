@@ -82,12 +82,12 @@ export const PostEntry = ({ post, ctx, location, ...props }) => {
 
         {location === "single" && (
           <>
+            <PrevNextPostNavigation ctx={ctx} />
             <SocialShare
               url={normalize(`/${post.uri}`)}
               title={post.title}
               media={media}
             />
-            <PrevNextPostNavigation ctx={ctx} />
           </>
         )}
       </div>
