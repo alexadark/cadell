@@ -13,7 +13,6 @@ const Post = ({ data, pageContext }) => {
     : featuredImage?.localFile?.publicURL
 
   // const shareImage = postShareImage?.shareImage?.localFile?.publicURL
-  console.log("share", shareImage)
 
   return (
     <Layout>
