@@ -7,7 +7,7 @@ import { Grommet } from "grommet"
 import grommetTheme from "../styles/grommet"
 import { useGsapReveal } from "../hooks"
 
-import "../styles/scss/styles.scss"
+// import "../styles/scss/styles.scss"
 
 const Layout = ({ children }) => {
   useGsapReveal(50, 2, [".gsReveal"])

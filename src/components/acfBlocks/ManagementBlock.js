@@ -31,7 +31,7 @@ export const ManagementBlock = ({ anchor, info, members }) => {
         <h3 className="geReveal" sx={{ variant: "text.heading" }}>
           Management
         </h3>
-        <Grid columns={[1, 1, 2]} gap={100}>
+        <Grid columns={[1, 1, 2, 3]} gap={[50, 100, 100, 30]}>
           {members &&
             members.map((member, i) => {
               const { name, content, email, image } = member
