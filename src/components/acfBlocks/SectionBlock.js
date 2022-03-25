@@ -187,7 +187,7 @@ const style = {
     //   transform: "translateY(0)",
     // },
     ".painting": {
-      width: ["100%", "100%", "65%"],
+      // width: ["100%", "100%", "65%"],
     },
   },
   // "&#whoWeAre": {
