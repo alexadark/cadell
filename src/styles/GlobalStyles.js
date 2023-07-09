@@ -20,6 +20,12 @@ export const globalStyles = theme => {
       /* scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch; */
     }
+    a {
+      font-family: Montserrat, sans-serif;
+    }
+    p {
+      font-family: Montserrat, sans-serif;
+    }
     body[style*="overflow"] {
       height: 100vh;
     }

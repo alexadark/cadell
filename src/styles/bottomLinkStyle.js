@@ -7,6 +7,7 @@ export default {
   },
   ".linkTitle": {
     lineHeight: 0.8,
+    fontFamily: "Montserrat, sans-serif",
   },
   ".bottomLink": {
     a: {
