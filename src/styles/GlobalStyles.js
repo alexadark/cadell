@@ -3,20 +3,20 @@ import Typography from "typography"
 
 export const globalStyles = theme => {
   const typography = new Typography({
-    baseFontSize: theme.baseFontSize || "16px",
-    baseLineHeight: theme.lineHeights.body || 1.5,
+    baseFontSize: theme?.baseFontSize || "16px",
+    baseLineHeight: theme?.lineHeights?.body || 1.5,
     scaleRatio: 3,
     blockMarginBottom: 0.75,
-    headerFontFamily: theme.fonts.heading.split(",").map(el => {
+    headerFontFamily: theme?.fonts?.heading?.split(",").map(el => {
       return el.trim()
     }),
 
     bodyFontFamily: theme.fonts.body.split(",").map(el => {
       return el.trim()
     }),
-    headerWeight: theme.fontWeights.heading,
-    bodyWeight: theme.fontWeights.body,
-    boldWeight: theme.fontWeights.bold,
+    headerWeight: theme?.fontWeights?.heading || 700,
+    bodyWeight: theme?.fontWeights?.body || 400,
+    boldWeight: theme?.fontWeights?.bold || 700,
   })
   return css`
     body, html {
