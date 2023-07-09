@@ -7,11 +7,11 @@ export const globalStyles = theme => {
     baseLineHeight: theme?.lineHeights?.body || 1.5,
     scaleRatio: 3,
     blockMarginBottom: 0.75,
-    headerFontFamily: theme?.fonts?.heading?.split(",").map(el => {
+    headerFontFamily: theme?.fonts?.heading?.split(",")?.map(el => {
       return el.trim()
     }),
 
-    bodyFontFamily: theme.fonts.body.split(",").map(el => {
+    bodyFontFamily: theme?.fonts?.body?.split(",")?.map(el => {
       return el.trim()
     }),
     headerWeight: theme?.fontWeights?.heading || 700,
