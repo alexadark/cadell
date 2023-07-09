@@ -2,16 +2,19 @@ import { css } from "@emotion/core"
 import Typography from "typography"
 
 export const globalStyles = theme => {
+  console.log(theme?.fonts?.heading?.split(","))
   const typography = new Typography({
     baseFontSize: theme?.baseFontSize || "16px",
     baseLineHeight: theme?.lineHeights?.body || 1.5,
     scaleRatio: 3,
     blockMarginBottom: 0.75,
+
     headerFontFamily: theme?.fonts?.heading?.split(",")?.map(el => {
-      return el?.trim() || "PT Serif, serif"
+      return el?.trim()
     }),
+
     bodyFontFamily: theme?.fonts?.body?.split(",")?.map(el => {
-      return el?.trim() || "Montserrat, sans-serif"
+      return el?.trim()
     }),
     headerWeight: theme?.fontWeights?.heading || 700,
     bodyWeight: theme?.fontWeights?.body || 400,
