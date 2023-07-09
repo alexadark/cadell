@@ -4,7 +4,7 @@ import Typography from "typography"
 export const globalStyles = theme => {
   const typography = new Typography({
     baseFontSize: theme.baseFontSize || "16px",
-    baseLineHeight: theme.lineHeights.body,
+    baseLineHeight: theme.lineHeights.body || 1.5,
     scaleRatio: 3,
     blockMarginBottom: 0.75,
     headerFontFamily: theme.fonts.heading.split(",").map(el => {
