@@ -102,8 +102,8 @@ export const globalStyles = theme => {
     iframe {
       width: 100%;
     }
-    ${typography.toString()}
-    @media screen and (max-width: ${theme.breakpoints[0]}) {
+    ${typography?.toString()}
+    @media screen and (max-width: ${theme?.breakpoints[0]}) {
       html {
         font-size: 16px;
       }
