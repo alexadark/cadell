@@ -19,14 +19,15 @@ export const globalStyles = theme => {
     boldWeight: theme?.fontWeights?.bold || 700,
   })
   return css`
-    body, html {
+    body,
+    html {
       margin: 0;
       max-width: 100%;
       overflow-x: hidden;
       /* scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch; */
     }
-    body[style*='overflow'] {
+    body[style*="overflow"] {
       height: 100vh;
     }
     /**
@@ -78,9 +79,9 @@ export const globalStyles = theme => {
  */
 
     button,
-    [type='button'],
-    [type='reset'],
-    [type='submit'] {
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
       -webkit-appearance: button;
     }
 
@@ -103,7 +104,7 @@ export const globalStyles = theme => {
       width: 100%;
     }
     ${typography?.toString()}
-    @media screen and (max-width: ${theme?.breakpoints[0]}) {
+    @media screen and (max-width: 600px) {
       html {
         font-size: 16px;
       }
@@ -127,6 +128,5 @@ export const globalStyles = theme => {
       outline-width: 0.5px;
       outline-color: #ddd !important;
     }
-
   `
 }
