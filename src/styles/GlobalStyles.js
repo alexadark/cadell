@@ -2,7 +2,6 @@ import { css } from "@emotion/core"
 import Typography from "typography"
 
 export const globalStyles = theme => {
-  console.log(theme?.fonts?.heading?.split(","))
   const typography = new Typography({
     baseFontSize: theme?.baseFontSize || "16px",
     baseLineHeight: theme?.lineHeights?.body || 1.5,
