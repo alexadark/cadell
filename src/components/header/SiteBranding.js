@@ -33,7 +33,7 @@ const style = {
   },
   alignItems: "center",
   a: {
-    fontFamily: "body",
+    fontFamily: "Montserrat, sans-serif",
     color: "secondary",
     textTransform: "uppercase",
     letterSpacing: 6,

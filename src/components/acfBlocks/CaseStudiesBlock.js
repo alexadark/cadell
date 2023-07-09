@@ -42,7 +42,15 @@ export const CaseStudiesBlock = ({ anchor, title, caseStudies, link }) => {
       }}
     >
       <Container sx={{ ...linkStyles }}>
-        <h3 sx={{ fontFamily: "body", mb: [20, 20, 50], ml: 35 }}>{title}</h3>
+        <h3
+          sx={{
+            fontFamily: "Montserrat, sans-serif",
+            mb: [20, 20, 50],
+            ml: 35,
+          }}
+        >
+          {title}
+        </h3>
         <Grid columns={[1, 1, 2]} gap={40} className="caseStudiesWrap">
           {caseStudies &&
             caseStudies.map((cs, i) => {

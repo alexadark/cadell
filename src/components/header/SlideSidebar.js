@@ -65,7 +65,7 @@ const SlideSidebar = ({ ...props }) => {
 export default SlideSidebar
 
 const style = {
-  fontFamily: "body",
+  fontFamily: "Montserrat, sans-serif",
   borderRadius: 0,
   bg: "slideSidebarBg",
   width: ["100%", "468px"],
@@ -120,7 +120,7 @@ const style = {
     "nav > ul": { mt: "xl" },
     "[aria-current]": {
       fontStyle: "italic",
-      fontWeight: "body",
+      fontWeight: "Montserrat, sans-serif",
     },
     button: {
       top: -4,

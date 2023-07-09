@@ -98,7 +98,7 @@ const style = {
   pb: 100,
   scrollMarginTop: 80,
   ".name": {
-    fontFamily: "body",
+    fontFamily: "Montserrat, sans-serif",
     color: "black",
     mt: 10,
   },

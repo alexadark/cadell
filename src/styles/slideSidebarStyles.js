@@ -6,7 +6,7 @@ const pehaafadein = keyframes`
   }
 `
 export default {
-  fontFamily: "body",
+  fontFamily: "Montserrat, sans-serif",
   borderRadius: 0,
   bg: "slideSidebarBg",
   width: ["100%", "468px"],
@@ -61,7 +61,7 @@ export default {
     "nav > ul": { mt: "xl" },
     "[aria-current]": {
       fontStyle: "italic",
-      fontWeight: "body",
+      fontWeight: "Montserrat, sans-serif",
     },
     button: {
       top: -4,

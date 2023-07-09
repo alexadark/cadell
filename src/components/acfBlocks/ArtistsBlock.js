@@ -27,11 +27,12 @@ export const ArtistsBlock = ({ anchor, artists }) => {
     </section>
   )
 }
+
 const style = {
   scrollMarginTop: 80,
   py: 100,
   h4: {
-    fontFamily: "body",
+    fontFamily: "Montserrat, sans-serif",
     mb: 50,
   },
   ".artists": {
