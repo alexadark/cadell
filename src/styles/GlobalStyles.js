@@ -7,8 +7,12 @@ export const globalStyles = theme => {
     baseLineHeight: theme?.lineHeights?.body || 1.5,
     scaleRatio: 3,
     blockMarginBottom: 0.75,
-    headerFontFamily: "PT Serif, serif",
-    bodyFontFamily: "Montserrat, sans-serif",
+    headerFontFamily: theme?.fonts?.heading?.split(",")?.map(el => {
+      return el?.trim() || "PT Serif, serif"
+    }),
+    bodyFontFamily: theme?.fonts?.body?.split(",")?.map(el => {
+      return el?.trim() || "Montserrat, sans-serif"
+    }),
     headerWeight: theme?.fontWeights?.heading || 700,
     bodyWeight: theme?.fontWeights?.body || 400,
     boldWeight: theme?.fontWeights?.bold || 700,
