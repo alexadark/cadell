@@ -88,6 +88,7 @@ const style = {
     a: {
       textDecoration: "none",
       color: "text",
+      fontFamily: "Montserrat, sans-serif",
     },
     mb: "xxl",
     li: {

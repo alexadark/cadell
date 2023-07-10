@@ -29,6 +29,7 @@ export default {
   ".menu": {
     a: {
       textDecoration: "none",
+      fontFamily: "Montserrat, sans-serif",
     },
     mb: "xxl",
     li: {
