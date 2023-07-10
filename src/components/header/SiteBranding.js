@@ -43,6 +43,7 @@ const style = {
     "@media (min-width: 1440px)": {
       ml: 10,
     },
+    fontFamily: "Montserrat, sans-serif",
     transform: "translateY(4px)",
     // letterSpacing: 1.5,
     fontSize: "m",
