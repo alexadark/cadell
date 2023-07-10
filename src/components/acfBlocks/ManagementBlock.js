@@ -104,6 +104,7 @@ const style = {
   },
   ".content": {},
   ".mail": {
+    fontFamily: "Montserrat, sans-serif",
     color: "purple",
     fontSize: "s",
     "&:hover": {
@@ -111,6 +112,7 @@ const style = {
     },
   },
   ".info": {
+    fontFamily: "Montserrat, sans-serif",
     // mt: 100,
   },
 }

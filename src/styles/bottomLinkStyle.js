@@ -10,6 +10,7 @@ export default {
     fontFamily: "Montserrat, sans-serif",
   },
   ".bottomLink": {
+    fontFamily: "Montserrat, sans-serif",
     a: {
       variant: "transitions.m",
       "&:hover": {
