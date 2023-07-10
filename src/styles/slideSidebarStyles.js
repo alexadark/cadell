@@ -27,6 +27,7 @@ export default {
     right: 3,
   },
   ".menu": {
+    fontFamily: "Montserrat, sans-serif",
     a: {
       textDecoration: "none",
     },

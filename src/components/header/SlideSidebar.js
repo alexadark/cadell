@@ -100,6 +100,7 @@ const style = {
 
       listStyle: "none",
       ".menu-item": {
+        fontFamily: "Montserrat, sans-serif",
         display: "block",
         py: "xs",
         borderBottom: "1px solid rgba(255,255,255,.15)",
