@@ -32,9 +32,9 @@ export const lineHeights = {
 }
 
 const heading = {
-  fontFamily: "heading",
-  lineHeight: "heading",
-  fontWeight: "heading",
+  fontFamily: "PT Serif, serif",
+  lineHeight: "PT Serif, serif",
+  fontWeight: "PT Serif, serif",
   color: "text",
   a: {
     borderBottom: "none",
@@ -53,7 +53,7 @@ export const a = {
 
 export const p = {
   fontSize: ["s"],
-  lineHeight: "body",
+  lineHeight: "Montserrat, sans-serif",
 }
 
 export const h1 = {
@@ -88,7 +88,7 @@ export const h6 = {
   mb: "xxs",
 }
 export const blockquote = {
-  fontFamily: "heading",
+  fontFamily: "PT Serif, serif",
   fontWeight: "bold",
   fontSize: "l",
   lineHeight: 1.6,

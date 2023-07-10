@@ -135,11 +135,11 @@ const style = {
   },
   ".text": {
     h3: {
-      fontFamily: "body",
+      fontFamily: "Montserrat, sans-serif",
     },
   },
   ".quote": {
-    fontFamily: "heading",
+    fontFamily: "PT Serif, serif",
     fontSize: "s",
     mb: 50,
     blockquote: {
@@ -165,7 +165,7 @@ const style = {
     },
   },
   ".paintTitle,.painter,.status": {
-    fontFamily: "body",
+    fontFamily: "Montserrat, sans-serif",
     fontSize: "xxs",
     my: 7,
     fontWeight: 400,

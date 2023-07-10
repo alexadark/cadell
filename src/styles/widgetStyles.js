@@ -1,53 +1,53 @@
 const sharedStyles = {
-  color: 'text',
-  '.inverse &': {
-    color: 'textInverse',
+  color: "text",
+  ".inverse &": {
+    color: "textInverse",
   },
   a: {
-    color: 'text',
-    '.inverse &': {
-      color: 'textInverse',
+    color: "text",
+    ".inverse &": {
+      color: "textInverse",
     },
-    textDecoration: 'none',
-    variant: 'text.special',
-    fontFamily: 'body',
-    fontWeight: 'bold',
-    transition: '0.6s',
-    ':hover': {
+    textDecoration: "none",
+    variant: "text.special",
+    fontFamily: "Montserrat, sans-serif",
+    fontWeight: "bold",
+    transition: "0.6s",
+    ":hover": {
       opacity: 0.6,
     },
   },
   ul: {
-    variant: 'list.raw',
+    variant: "list.raw",
   },
 
-  '.widget-title': {
-    fontSize: 's',
-    textAlign: 'center',
-    color: 'text',
-    '.inverse &': {
-      color: 'textInverse',
+  ".widget-title": {
+    fontSize: "s",
+    textAlign: "center",
+    color: "text",
+    ".inverse &": {
+      color: "textInverse",
     },
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    textTransform: 'uppercase',
-    alignItems: 'center',
-    letterSpacing: '2px',
-    ':after, :before': {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    textTransform: "uppercase",
+    alignItems: "center",
+    letterSpacing: "2px",
+    ":after, :before": {
       content: '""',
-      height: '1px',
-      borderTop: '1px solid',
-      flex: '1 0',
+      height: "1px",
+      borderTop: "1px solid",
+      flex: "1 0",
     },
-    ':after': {
-      ml: 'xs',
+    ":after": {
+      ml: "xs",
     },
-    ':before': {
-      mr: 'xs',
+    ":before": {
+      mr: "xs",
     },
   },
-  '.widget-recent-posts': {},
+  ".widget-recent-posts": {},
 }
 
 export const widgetStyles = {
@@ -60,9 +60,9 @@ export const widgetStyles = {
     a: {
       ...sharedStyles.a,
     },
-    '[aria-current]': {
-      fontStyle: 'italic',
-      fontWeight: 'body',
+    "[aria-current]": {
+      fontStyle: "italic",
+      fontWeight: "body",
     },
   },
   tags: {
@@ -70,20 +70,20 @@ export const widgetStyles = {
 
     ul: {
       ...sharedStyles.ul,
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "center",
     },
     li: {
-      pr: 'xxs',
-      mb: 'xxs',
+      pr: "xxs",
+      mb: "xxs",
     },
     a: {
       ...sharedStyles.a,
     },
-    '[aria-current]': {
-      fontStyle: 'italic',
-      fontWeight: 'body',
+    "[aria-current]": {
+      fontStyle: "italic",
+      fontWeight: "body",
     },
   },
   recentPosts: {
@@ -92,40 +92,40 @@ export const widgetStyles = {
       m: 0,
     },
     a: {
-      color: 'text',
-      '.inverse &': {
-        color: 'textInverse',
+      color: "text",
+      ".inverse &": {
+        color: "textInverse",
       },
-      textDecoration: 'none',
-      fontFamily: 'body',
-      fontSize: 'xxs',
-      transition: '.6s',
-      ':hover': {
-        ...sharedStyles.a[':hover'],
+      textDecoration: "none",
+      fontFamily: "Montserrat, sans-serif",
+      fontSize: "xxs",
+      transition: ".6s",
+      ":hover": {
+        ...sharedStyles.a[":hover"],
       },
     },
 
     li: {
-      display: 'flex',
-      alignItems: 'center',
-      mb: 'm',
+      display: "flex",
+      alignItems: "center",
+      mb: "m",
     },
-    '.gatsby-image-wrapper': {
-      display: 'block!important',
+    ".gatsby-image-wrapper": {
+      display: "block!important",
     },
-    '.textual': {
-      ml: 's',
+    ".textual": {
+      ml: "s",
       a: {
-        display: 'block',
+        display: "block",
       },
     },
-    '.widget-post-title': {
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      fontSize: 's',
+    ".widget-post-title": {
+      fontFamily: "PT Serif, serif",
+      fontWeight: "heading",
+      fontSize: "s",
     },
-    '.widget-post-date': {
-      variant: 'text.special',
+    ".widget-post-date": {
+      variant: "text.special",
     },
   },
   newsletter: {
@@ -133,26 +133,26 @@ export const widgetStyles = {
     input: {
       px: 20,
       py: 10,
-      border: 'none',
-      bg: 'nlInputBg',
-      color: 'nlInputColor',
-      border: '1px solid #ddd',
-      borderRight: 'none'
+      border: "none",
+      bg: "nlInputBg",
+      color: "nlInputColor",
+      border: "1px solid #ddd",
+      borderRight: "none",
     },
     button: {
-      border: 'none',
+      border: "none",
       px: 20,
-      borderRadius: '0 5px 5px 0',
-      textTransform: 'uppercase',
-      fontSize: 'xxs',
-      bg: 'nlButtonBg',
-      color: 'nlButtonColor',
-      fontWeight: 'bold',
+      borderRadius: "0 5px 5px 0",
+      textTransform: "uppercase",
+      fontSize: "xxs",
+      bg: "nlButtonBg",
+      color: "nlButtonColor",
+      fontWeight: "bold",
       letterSpacing: 1.2,
-      cursor: 'pointer',
-      variant: 'transitions.m',
-      '&:hover': {
-        bg: 'nlButtonBgHover',
+      cursor: "pointer",
+      variant: "transitions.m",
+      "&:hover": {
+        bg: "nlButtonBgHover",
       },
     },
   },

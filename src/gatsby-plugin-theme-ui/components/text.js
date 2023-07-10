@@ -15,7 +15,7 @@ const specialSharedStyles = {
 export const text = {
   branding: {
     textTransform: "uppercase",
-    fontFamily: "heading",
+    fontFamily: "PT Serif, serif",
     fontWeight: 500,
 
     lineHeight: 1.2,
@@ -36,7 +36,7 @@ export const text = {
     },
   },
   heading: {
-    fontFamily: "body",
+    fontFamily: "Montserrat, sans-serif",
     mb: 50,
     // fontWeight: "bold",
     // fontSize: "l",

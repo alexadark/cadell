@@ -130,6 +130,7 @@ const menuStyles = {
   },
 
   ".menu-item": {
+    fontFamily: "Montserrat, sans-serif",
     listStyleType: "none",
     position: "relative",
     mx: 10,

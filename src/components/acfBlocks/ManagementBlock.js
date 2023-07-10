@@ -98,12 +98,13 @@ const style = {
   pb: 100,
   scrollMarginTop: 80,
   ".name": {
-    fontFamily: "body",
+    fontFamily: "Montserrat, sans-serif",
     color: "black",
     mt: 10,
   },
   ".content": {},
   ".mail": {
+    fontFamily: "Montserrat, sans-serif",
     color: "purple",
     fontSize: "s",
     "&:hover": {
@@ -111,6 +112,7 @@ const style = {
     },
   },
   ".info": {
+    fontFamily: "Montserrat, sans-serif",
     // mt: 100,
   },
 }

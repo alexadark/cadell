@@ -78,6 +78,7 @@ const style = {
     pb: [50, 50, 50, 0],
   },
   ".subtitle": {
+    fontFamily: "Montserrat, sans-serif",
     color: "black",
     fontSize: 15,
     fontStyle: "italic",

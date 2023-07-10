@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 // eslint-disable-next-line no-unused-vars
 import React from "react"
 import { Link } from "gatsby"
@@ -17,9 +17,9 @@ export const PostEntryTitle = ({ post, location, ...props }) => {
         />
       ) : (
         // eslint-disable-next-line react/jsx-pascal-case
-        <Styled.h1 as="h2" className="entry-title" {...props}>
+        <h1 as="h2" className="entry-title" {...props}>
           <Link to={`${uri}`} dangerouslySetInnerHTML={{ __html: title }} />
-        </Styled.h1>
+        </h1>
       )}
     </>
   )

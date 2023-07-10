@@ -65,7 +65,7 @@ const SlideSidebar = ({ ...props }) => {
 export default SlideSidebar
 
 const style = {
-  fontFamily: "body",
+  fontFamily: "Montserrat, sans-serif",
   borderRadius: 0,
   bg: "slideSidebarBg",
   width: ["100%", "468px"],
@@ -85,6 +85,7 @@ const style = {
     right: 3,
   },
   ".menu": {
+    fontFamily: "Montserrat, sans-serif",
     a: {
       textDecoration: "none",
       color: "text",
@@ -99,6 +100,7 @@ const style = {
 
       listStyle: "none",
       ".menu-item": {
+        fontFamily: "Montserrat, sans-serif",
         display: "block",
         py: "xs",
         borderBottom: "1px solid rgba(255,255,255,.15)",
@@ -120,7 +122,7 @@ const style = {
     "nav > ul": { mt: "xl" },
     "[aria-current]": {
       fontStyle: "italic",
-      fontWeight: "body",
+      fontWeight: "Montserrat, sans-serif",
     },
     button: {
       top: -4,

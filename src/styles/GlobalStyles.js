@@ -3,30 +3,28 @@ import Typography from "typography"
 
 export const globalStyles = theme => {
   const typography = new Typography({
-    baseFontSize: theme.baseFontSize || "16px",
-    baseLineHeight: theme.lineHeights.body,
+    baseFontSize: theme?.baseFontSize || "16px",
+    baseLineHeight: theme?.lineHeights?.body || 1.5,
     scaleRatio: 3,
     blockMarginBottom: 0.75,
-    headerFontFamily: theme.fonts.heading.split(",").map(el => {
-      return el.trim()
-    }),
-
-    bodyFontFamily: theme.fonts.body.split(",").map(el => {
-      return el.trim()
-    }),
-    headerWeight: theme.fontWeights.heading,
-    bodyWeight: theme.fontWeights.body,
-    boldWeight: theme.fontWeights.bold,
+    headerWeight: theme?.fontWeights?.heading || 700,
+    bodyWeight: theme?.fontWeights?.body || 400,
+    boldWeight: theme?.fontWeights?.bold || 700,
   })
   return css`
-    body, html {
+    body,
+    html {
       margin: 0;
       max-width: 100%;
       overflow-x: hidden;
       /* scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch; */
     }
-    body[style*='overflow'] {
+
+    p {
+      font-family: Montserrat, sans-serif;
+    }
+    body[style*="overflow"] {
       height: 100vh;
     }
     /**
@@ -78,9 +76,9 @@ export const globalStyles = theme => {
  */
 
     button,
-    [type='button'],
-    [type='reset'],
-    [type='submit'] {
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
       -webkit-appearance: button;
     }
 
@@ -102,8 +100,8 @@ export const globalStyles = theme => {
     iframe {
       width: 100%;
     }
-    ${typography.toString()}
-    @media screen and (max-width: ${theme.breakpoints[0]}) {
+    ${typography?.toString()}
+    @media screen and (max-width: 600px) {
       html {
         font-size: 16px;
       }
@@ -127,6 +125,5 @@ export const globalStyles = theme => {
       outline-width: 0.5px;
       outline-color: #ddd !important;
     }
-
   `
 }

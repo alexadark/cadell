@@ -1,18 +1,18 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Input } from 'theme-ui'
-import { useState } from 'react'
-import addToMailchimp from 'gatsby-plugin-mailchimp'
-import { widgetStyles } from '../../styles'
+import { jsx, Box, Flex, Input } from "theme-ui"
+import { useState } from "react"
+import addToMailchimp from "gatsby-plugin-mailchimp"
+import { widgetStyles } from "../../styles"
 
 export const Newsletter = props => {
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState("")
   const [msg, setMsg] = useState()
   const handleSubmit = e => {
     e.preventDefault()
     addToMailchimp(email).then(data => {
-      return data.result === 'success'
+      return data.result === "success"
         ? setMsg(data.msg)
-        : setMsg('This email has already subscribed, try with another one')
+        : setMsg("This email has already subscribed, try with another one")
     })
   }
   const handleChange = e => {
@@ -22,6 +22,7 @@ export const Newsletter = props => {
     <Box
       sx={{
         ...widgetStyles.newsletter,
+        fontFamily: "Montserrat, sans-serif",
       }}
       {...props}
     >
@@ -37,7 +38,7 @@ export const Newsletter = props => {
               type="text"
               value={email}
               onChange={handleChange}
-              sx={{ borderRadius: '5px 0 0 5px' }}
+              sx={{ borderRadius: "5px 0 0 5px" }}
               aria-label="Add your Email address to subsribe"
             />
             <button type="submit">Subscribe</button>

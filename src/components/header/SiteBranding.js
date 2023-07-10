@@ -33,7 +33,7 @@ const style = {
   },
   alignItems: "center",
   a: {
-    fontFamily: "body",
+    fontFamily: "Montserrat, sans-serif",
     color: "secondary",
     textTransform: "uppercase",
     letterSpacing: 6,
@@ -43,6 +43,7 @@ const style = {
     "@media (min-width: 1440px)": {
       ml: 10,
     },
+    fontFamily: "Montserrat, sans-serif",
     transform: "translateY(4px)",
     // letterSpacing: 1.5,
     fontSize: "m",

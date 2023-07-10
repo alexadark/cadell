@@ -7,8 +7,10 @@ export default {
   },
   ".linkTitle": {
     lineHeight: 0.8,
+    fontFamily: "Montserrat, sans-serif",
   },
   ".bottomLink": {
+    fontFamily: "Montserrat, sans-serif",
     a: {
       variant: "transitions.m",
       "&:hover": {

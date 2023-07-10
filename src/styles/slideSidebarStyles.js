@@ -6,7 +6,7 @@ const pehaafadein = keyframes`
   }
 `
 export default {
-  fontFamily: "body",
+  fontFamily: "Montserrat, sans-serif",
   borderRadius: 0,
   bg: "slideSidebarBg",
   width: ["100%", "468px"],
@@ -27,6 +27,7 @@ export default {
     right: 3,
   },
   ".menu": {
+    fontFamily: "Montserrat, sans-serif",
     a: {
       textDecoration: "none",
     },
@@ -40,6 +41,7 @@ export default {
 
       listStyle: "none",
       ".menu-item": {
+        fontFamily: "Montserrat, sans-serif",
         display: "block",
         py: "xs",
         borderBottom: "1px solid rgba(255,255,255,.15)",
@@ -61,13 +63,14 @@ export default {
     "nav > ul": { mt: "xl" },
     "[aria-current]": {
       fontStyle: "italic",
-      fontWeight: "body",
+      fontWeight: "Montserrat, sans-serif",
     },
     button: {
       top: -4,
     },
     ".sub-menu": {
       ".menu-item": {
+        fontFamily: "Montserrat, sans-serif",
         height: "10px !important",
       },
     },
