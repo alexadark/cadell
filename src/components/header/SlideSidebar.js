@@ -85,10 +85,10 @@ const style = {
     right: 3,
   },
   ".menu": {
+    fontFamily: "Montserrat, sans-serif",
     a: {
       textDecoration: "none",
       color: "text",
-      fontFamily: "Montserrat, sans-serif",
     },
     mb: "xxl",
     li: {

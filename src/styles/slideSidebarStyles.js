@@ -29,7 +29,6 @@ export default {
   ".menu": {
     a: {
       textDecoration: "none",
-      fontFamily: "Montserrat, sans-serif",
     },
     mb: "xxl",
     li: {
@@ -41,6 +40,7 @@ export default {
 
       listStyle: "none",
       ".menu-item": {
+        fontFamily: "Montserrat, sans-serif",
         display: "block",
         py: "xs",
         borderBottom: "1px solid rgba(255,255,255,.15)",
@@ -69,6 +69,7 @@ export default {
     },
     ".sub-menu": {
       ".menu-item": {
+        fontFamily: "Montserrat, sans-serif",
         height: "10px !important",
       },
     },
