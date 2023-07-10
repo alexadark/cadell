@@ -4,6 +4,7 @@ export const postStyles = {
   },
   ".entry-title": {
     fontSize: 36,
+    fontFamily: "PT Serif, serif",
     mb: 20,
   },
   ".entry-info": {
