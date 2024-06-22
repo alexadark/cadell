@@ -2,7 +2,7 @@
  * @type {{wordPressUrl: string}}
  */
 const config = {
-  wordPressUrl: `https://cadellco.wpengine.com/`,
+  wordPressUrl: `http://tgg.646.mytemp.website/`,
 }
 
 module.exports = config
